@@ -1,10 +1,23 @@
 ================================================================================
- CLAUS & KRAMPUS — COMPLETE ASSET PROMPT SHEET  (v1.2)
+ CLAUS & KRAMPUS — COMPLETE ASSET PROMPT SHEET  (v1.3)
  Image / video / audio prompts, ready to copy-paste. Matches docs/GDD.md.
 ================================================================================
 
 CHANGELOG
 ---------
+v1.3  Full consistency pass on every asset:
+      - Reference images are now written into every prompt as placeholders
+        ([SANTA_REF], [KRAMPUS_REF], [REINDEER_REF]) — replace once, see
+        "REFERENCE PLACEHOLDERS" below.
+      - Midjourney v7 syntax: --oref/--ow (Omni Reference) instead of the
+        v6 --cref/--cw.
+      - Snowman symbol gets the same bust crop, rounded cut-off and
+        viewer's-right head turn as the approved characters.
+      - Reel frame: gold bells replaced with gold stars (bells = scatter only).
+      - Sleigh reindeer in intros/cards match the H3 Reindeer design.
+      - Santa's hand/sleeve in intros matches his coat; Krampus silhouette in
+        the blizzard matches the approved horns.
+      - New prop: Krampus rooftop-leap sprite used by the base background.
 v1.2  Reindeer collar: no bell (it looked like the Sleigh Bell scatter); a
       gold star tag instead. All character busts turn toward the viewer's
       right (matches the approved picks).
@@ -23,6 +36,23 @@ CURRENT PICKS (use as references)
   sym_H3_reindeer— redo with v1.2 prompt (bell -> star tag); keep the
                    second version's face and antlers as reference
 
+REFERENCE PLACEHOLDERS  (do this ONCE before copying prompts)
+-------------------------------------------------------------
+Upload your approved picks to Midjourney (or any image host) and copy their
+URLs. Then find-and-replace in this file:
+  [SANTA_REF]     -> URL of the approved sym_H1_santa   (style + Santa character)
+  [KRAMPUS_REF]   -> URL of the approved char_krampus sheet (Krampus character)
+  [REINDEER_REF]  -> URL of the approved sym_H3_reindeer   (reindeer character)
+Every prompt then carries its references automatically:
+  --sref [SANTA_REF] --sw 200   on EVERY image (locks the style)
+  --oref [..._REF]  --ow 80–100 on images that show that character
+Midjourney v6: use --cref <url> --cw 80 instead of --oref/--ow.
+Flux / Leonardo / Firefly: attach the same images as Style Reference
+(0.5–0.7) and Character Reference (0.6–0.8) and delete the "--" parameters.
+Midjourney v7 allows only ONE --oref per prompt; for images with both Santa
+and Krampus (game tile 12.1) generate with [SANTA_REF], then inpaint Krampus
+using [KRAMPUS_REF] (Vary Region / Editor).
+
 HOW TO USE THIS FILE
 --------------------
 1. Every prompt below is SELF-CONTAINED: it already contains the shared STYLE
@@ -37,13 +67,14 @@ HOW TO USE THIS FILE
       --sw 200; others: Style Reference 0.5–0.7). This locks line weight,
       shading, palette and finish.
    b) For anything showing Santa, ALSO attach the Santa symbol as CHARACTER
-      reference (Midjourney: --cref <url> --cw 80; Flux/Leonardo: Character
-      Reference / IP-Adapter at 0.6–0.8). Do NOT use the Santa character
+      reference (Midjourney v7: --oref <url> --ow 100; v6: --cref <url>
+      --cw 80; Flux/Leonardo: Character Reference / IP-Adapter at 0.6–0.8). Do NOT use the Santa character
       sheet as a reference: it came out flatter and more generic. The sheet
       is only a pose/expression guide for animators.
    c) For anything showing Krampus, attach the approved Krampus character
       sheet (regenerated with the green coat, section 1.2) as CHARACTER
-      reference, plus the Santa symbol as STYLE reference.
+      reference, plus the Santa symbol as STYLE reference. Anything showing
+      a reindeer uses the approved H3 Reindeer as CHARACTER reference.
    d) Re-use the same seed per asset family (all symbols one seed, all
       backgrounds one seed) when your tool supports it.
    e) Never let the AI write text. All words (logo lettering, WIN banners,
@@ -56,7 +87,7 @@ HOW TO USE THIS FILE
    (background removal) to transparent PNG.
 
 Suggested tool settings
-  Midjourney v7:  --style raw --s 150 --q 1   (+ --ar from each prompt)
+  Midjourney v7:  --v 7 --style raw --s 150   (references are already in each prompt)
   Flux / SDXL:    CFG 3.5–5, 30–40 steps, same seed per family
   Upscale finals to the "Deliver" size listed for each asset.
 
@@ -177,7 +208,7 @@ outlines (#1D1424) of even medium weight, soft painterly shading with crisp
 edge highlights, warm golden key light from the top-left, cool blue rim light
 from the back-right, saturated but controlled festive palette, subtle
 hand-painted brush texture, polished mobile-game finish, not photorealistic.
---ar 16:9
+--ar 16:9 --sref [SANTA_REF] --sw 200 --oref [SANTA_REF] --ow 100
 <<<
 (Optional: only regenerate if animators need it. It is NOT a reference image.)
 
@@ -199,7 +230,7 @@ outlines (#1D1424) of even medium weight, soft painterly shading with crisp
 edge highlights, warm golden key light from the top-left, cool blue rim light
 from the back-right, saturated but controlled festive palette, subtle
 hand-painted brush texture, polished mobile-game finish, not photorealistic.
---ar 16:9
+--ar 16:9 --sref [SANTA_REF] --sw 200 --oref [KRAMPUS_REF] --ow 100
 <<<
 
 ================================================================================
@@ -224,7 +255,7 @@ readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
 even medium weight, soft painterly shading with crisp edge highlights, warm
 golden key light from the top-left, cool blue rim light from the back-right,
 saturated but controlled festive palette, subtle hand-painted brush texture,
-polished mobile-game finish, not photorealistic. --ar 1:1
+polished mobile-game finish, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200 --oref [SANTA_REF] --ow 100
 <<<
 
 2.2 H2 — KRAMPUS   (sym_H2_krampus.png)
@@ -246,7 +277,7 @@ shapes and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
 weight, soft painterly shading with crisp edge highlights, warm golden key
 light from the top-left, cool blue rim light from the back-right, saturated
 but controlled festive palette, subtle hand-painted brush texture, polished
-mobile-game finish, not photorealistic. --ar 1:1
+mobile-game finish, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200 --oref [KRAMPUS_REF] --ow 100
 <<<
 
 2.3 H3 — REINDEER   (sym_H3_reindeer.png)
@@ -265,7 +296,7 @@ shapes and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
 weight, soft painterly shading with crisp edge highlights, warm golden key
 light from the top-left, cool blue rim light from the back-right, saturated
 but controlled festive palette, subtle hand-painted brush texture, polished
-mobile-game finish, not photorealistic. --ar 1:1
+mobile-game finish, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200 --oref [REINDEER_REF] --ow 80
 <<<
 
 2.4 H4 — SNOWMAN   (sym_H4_snowman.png)
@@ -274,8 +305,10 @@ Slot machine symbol: head-and-shoulders bust of a cheerful snowman, round
 snow-white #F4F8FF head with soft blue shadows, coal-lump eyes and smile,
 orange carrot nose, tall dark top hat with a crimson #C2283A band and a holly
 sprig, knitted pine-green #2F8F57 scarf with white stripes, rosy painted
-cheeks. Single centered subject filling about 80% of a square canvas, facing
-the viewer in a slight three-quarter view, strong readable silhouette,
+cheeks, cheerful open smile, no bell anywhere. Tight crop: the face and hat
+fill most of the tile, head turned slightly toward the viewer's right, the
+bust ends at the scarf in a smooth rounded bottom curve (same cut-off shape as
+the Santa symbol). Single centered subject, strong readable silhouette,
 isolated on a plain flat mid-grey #808080 background, no frame, no shadow on
 background. Stylized premium online-slot game art, hand-painted 2.5D
 illustration, chunky readable shapes and bold silhouettes, clean dark plum
@@ -283,7 +316,7 @@ outlines (#1D1424) of even medium weight, soft painterly shading with crisp
 edge highlights, warm golden key light from the top-left, cool blue rim light
 from the back-right, saturated but controlled festive palette, subtle
 hand-painted brush texture, polished mobile-game finish, not photorealistic.
---ar 1:1
+--ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 2.5 L1 — GINGERBREAD MAN   (sym_L1_gingerbread.png)
@@ -299,7 +332,7 @@ readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
 even medium weight, soft painterly shading with crisp edge highlights, warm
 golden key light from the top-left, cool blue rim light from the back-right,
 saturated but controlled festive palette, subtle hand-painted brush texture,
-polished mobile-game finish, not photorealistic. --ar 1:1
+polished mobile-game finish, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 2.6 L2 — CANDY CANE   (sym_L2_candycane.png)
@@ -315,7 +348,7 @@ and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
 weight, soft painterly shading with crisp edge highlights, warm golden key
 light from the top-left, cool blue rim light from the back-right, saturated
 but controlled festive palette, subtle hand-painted brush texture, polished
-mobile-game finish, not photorealistic. --ar 1:1
+mobile-game finish, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 2.7 L3 — ORNAMENT BAUBLE   (sym_L3_ornament.png)
@@ -331,7 +364,7 @@ readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
 even medium weight, soft painterly shading with crisp edge highlights, warm
 golden key light from the top-left, cool blue rim light from the back-right,
 saturated but controlled festive palette, subtle hand-painted brush texture,
-polished mobile-game finish, not photorealistic. --ar 1:1
+polished mobile-game finish, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 2.8 L4 — HOLLY   (sym_L4_holly.png)
@@ -347,7 +380,7 @@ silhouettes, clean dark plum outlines (#1D1424) of even medium weight, soft
 painterly shading with crisp edge highlights, warm golden key light from the
 top-left, cool blue rim light from the back-right, saturated but controlled
 festive palette, subtle hand-painted brush texture, polished mobile-game
-finish, not photorealistic. --ar 1:1
+finish, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 2.9 L5 — MITTEN   (sym_L5_mitten.png)
@@ -363,7 +396,7 @@ clean dark plum outlines (#1D1424) of even medium weight, soft painterly
 shading with crisp edge highlights, warm golden key light from the top-left,
 cool blue rim light from the back-right, saturated but controlled festive
 palette, subtle hand-painted brush texture, polished mobile-game finish, not
-photorealistic. --ar 1:1
+photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 2.10 W — GIFT WILD, WRAPPED   (sym_W_gift_wrapped.png)
@@ -382,7 +415,7 @@ outlines (#1D1424) of even medium weight, soft painterly shading with crisp
 edge highlights, warm golden key light from the top-left, cool blue rim light
 from the back-right, saturated but controlled festive palette, subtle
 hand-painted brush texture, polished mobile-game finish, not photorealistic.
---ar 1:1
+--ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 (Designer adds "WILD" on the tag in Lilita One.)
 
@@ -400,7 +433,7 @@ shapes and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
 weight, soft painterly shading with crisp edge highlights, warm golden key
 light from the top-left, cool blue rim light from the back-right, saturated
 but controlled festive palette, subtle hand-painted brush texture, polished
-mobile-game finish, not photorealistic. --ar 1:1
+mobile-game finish, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 (Multiplier "×2 / ×3 / ×5 / ×10 / ×25" badge is added in engine.)
 
@@ -419,7 +452,7 @@ clean dark plum outlines (#1D1424) of even medium weight, soft painterly
 shading with crisp edge highlights, warm golden key light from the top-left,
 cool blue rim light from the back-right, saturated but controlled festive
 palette, subtle hand-painted brush texture, polished mobile-game finish, not
-photorealistic. --ar 1:1
+photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 2.13 W — GIFT LID (separate animation part)   (sym_W_gift_lid.png)
@@ -433,7 +466,7 @@ premium online-slot game art, hand-painted 2.5D illustration, chunky readable
 shapes, clean dark plum outlines (#1D1424) of even medium weight, soft
 painterly shading with crisp edge highlights, warm golden key light from the
 top-left, cool blue rim light from the back-right, not photorealistic.
---ar 1:1
+--ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 2.14 S — SLEIGH BELL SCATTER   (sym_S_sleighbell.png)
@@ -451,7 +484,7 @@ outlines (#1D1424) of even medium weight, soft painterly shading with crisp
 edge highlights, warm golden key light from the top-left, cool blue rim light
 from the back-right, saturated but controlled festive palette, subtle
 hand-painted brush texture, polished mobile-game finish, not photorealistic.
---ar 1:1
+--ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 ================================================================================
@@ -471,7 +504,7 @@ Perfectly symmetrical, centered, filling 95% of a square canvas, isolated on a
 plain flat mid-grey #808080 background. Stylized premium online-slot game art,
 hand-painted 2.5D, clean dark plum outlines (#1D1424), soft painterly shading
 with crisp edge highlights, warm golden key light from the top-left, cool blue
-rim light from the back-right, not photorealistic. --ar 1:1
+rim light from the back-right, not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 3.2 VALUES FOR [GEM + METAL + INNER COLOR]
@@ -498,7 +531,7 @@ background, no shadow. Stylized premium online-slot game art, hand-painted
 2.5D illustration, chunky readable shapes, clean dark plum outlines (#1D1424)
 of even medium weight, soft painterly shading with crisp edge highlights,
 warm golden key light from the top-left, cool blue rim light from the
-back-right, subtle hand-painted brush texture, not photorealistic. --ar 2:3
+back-right, subtle hand-painted brush texture, not photorealistic. --ar 2:3 --sref [SANTA_REF] --sw 200
 <<<
 
 4.2 VALUES
@@ -514,7 +547,7 @@ back-right, subtle hand-painted brush texture, not photorealistic. --ar 2:3
 ================================================================================
 5. BACKGROUNDS  (16:9 desktop and 9:16 mobile; full image + parallax layers)
    Keep the CENTER of the image calm and lower contrast: the reels sit there.
-   For 9:16 versions swap "--ar 16:9" for "--ar 9:16" and add
+   For 9:16 versions change "--ar 16:9" to "--ar 9:16" and add
    "vertical composition, tall sky".
    Layers: generate the FULL scene, then each layer separately on flat grey
    (except the sky) so they can scroll at different speeds.
@@ -534,7 +567,7 @@ readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
 even medium weight, soft painterly shading with crisp edge highlights, warm
 golden key light from the top-left, cool blue rim light from the back-right,
 saturated but controlled festive palette, subtle hand-painted brush texture,
-polished mobile-game finish, not photorealistic, no characters. --ar 16:9
+polished mobile-game finish, not photorealistic, no characters. --ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 
 5.2 ANTE ACTIVE — SAME VILLAGE, NAUGHTY NIGHT   (bg_ante_full.png)
@@ -552,7 +585,7 @@ chunky readable shapes and bold silhouettes, clean dark plum outlines
 highlights, warm golden key light from the top-left, cool blue rim light from
 the back-right, saturated but controlled festive palette, subtle hand-painted
 brush texture, polished mobile-game finish, not photorealistic, no
-characters. --ar 16:9
+characters. --ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 
 5.3 BONUS — FIREPLACE IN SANTA'S WORKSHOP   (bg_bonus_full.png)
@@ -569,7 +602,7 @@ readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
 even medium weight, soft painterly shading with crisp edge highlights, warm
 golden key light from the top-left, cool blue rim light from the back-right,
 saturated but controlled festive palette, subtle hand-painted brush texture,
-polished mobile-game finish, not photorealistic, no characters. --ar 16:9
+polished mobile-game finish, not photorealistic, no characters. --ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 
 5.4 SUPER BONUS — GILDED WORKSHOP AT MIDNIGHT   (bg_super_full.png)
@@ -586,16 +619,16 @@ clean dark plum outlines (#1D1424) of even medium weight, soft painterly
 shading with crisp edge highlights, warm golden key light from the top-left,
 cool blue rim light from the back-right, saturated but controlled festive
 palette, subtle hand-painted brush texture, polished mobile-game finish, not
-photorealistic, no characters, no text on the scroll. --ar 16:9
+photorealistic, no characters, no text on the scroll. --ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 
 5.5 HIDDEN BONUS — KRAMPUSNACHT BLIZZARD   (bg_hidden_full.png)
 >>>
 Wide game background illustration: a frozen old-town square at night in a
 howling blizzard, snow blown sideways, icicles on the rooftops, cold blue
-window lights #7AB8FF, a huge shadowy silhouette of Krampus with large curled
-ram-like horns and two glowing amber-yellow eyes #FFD34D looming behind the
-town on the left, rusty chains hanging from lamp posts, cold moonlight, dark
+window lights #7AB8FF, a huge shadowy silhouette of Krampus (the same large
+curled ram-like horns and pointed ears as the Krampus character sheet) with
+two glowing amber-yellow eyes #FFD34D looming behind the town on the left, rusty chains hanging from lamp posts, cold moonlight, dark
 navy to steel blue palette (#06070F to #2E3A5C), spooky-fun mood not
 terrifying. Composition: buildings frame the bottom and sides, open calm empty
 area in the center for game UI. Stylized premium online-slot game art,
@@ -603,15 +636,15 @@ hand-painted 2.5D illustration, chunky readable shapes and bold silhouettes,
 clean dark plum outlines (#1D1424) of even medium weight, soft painterly
 shading with crisp edge highlights, cool blue rim light, saturated but
 controlled palette, subtle hand-painted brush texture, polished mobile-game
-finish, not photorealistic. --ar 16:9
+finish, not photorealistic. --ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 
 5.6 PARALLAX LAYER PROMPTS (do for each scene; paste the scene's FULL prompt
     as image reference, then use these)
-  SKY layer   >>> Only the sky of the scene: [paste the sky colors and moon/aurora sentence from the scene], no buildings, no ground, seamless wide panorama, Stylized premium online-slot game art, hand-painted 2.5D, soft painterly shading, not photorealistic. --ar 21:9 <<<
-  FAR layer   >>> Only the distant silhouette layer of the scene: far hills and faint rooftops in one muted color, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines, not photorealistic. --ar 21:9 <<<
-  MID layer   >>> Only the middle row of buildings of the scene with glowing windows and chimneys, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines (#1D1424), warm key light top-left, not photorealistic. --ar 21:9 <<<
-  NEAR layer  >>> Only the closest foreground rooftops / props of the scene, large and darker, snow caps, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines (#1D1424), not photorealistic. --ar 21:9 <<<
+  SKY layer   >>> Only the sky of the scene: [paste the sky colors and moon/aurora sentence from the scene], no buildings, no ground, seamless wide panorama, Stylized premium online-slot game art, hand-painted 2.5D, soft painterly shading, not photorealistic. --ar 21:9 --sref [SANTA_REF] --sw 200 <<<
+  FAR layer   >>> Only the distant silhouette layer of the scene: far hills and faint rooftops in one muted color, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines, not photorealistic. --ar 21:9 --sref [SANTA_REF] --sw 200 <<<
+  MID layer   >>> Only the middle row of buildings of the scene with glowing windows and chimneys, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines (#1D1424), warm key light top-left, not photorealistic. --ar 21:9 --sref [SANTA_REF] --sw 200 <<<
+  NEAR layer  >>> Only the closest foreground rooftops / props of the scene, large and darker, snow caps, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines (#1D1424), not photorealistic. --ar 21:9 --sref [SANTA_REF] --sw 200 <<<
   (Interior scenes: FAR = back wall, MID = shelves/fireplace, NEAR = workbench + garland foreground.)
 
 ================================================================================
@@ -623,7 +656,7 @@ finish, not photorealistic. --ar 16:9
 Ornate slot machine reel frame for a 5 column by 4 row grid, front view, a
 thick carved dark wood frame with polished gold trim, snow piled on the top
 edge with small icicles hanging, a garland of pine, holly and tiny red
-baubles across the top corners, a small gold bell in each top corner, the
+baubles across the top corners, a small gold star in each top corner (no bells), the
 inside of the frame is one completely empty dark plum #0F0B18 rectangle with
 four thin vertical divider lines evenly spaced. Perfectly symmetrical,
 centered, isolated on a plain flat mid-grey #808080 background. Stylized
@@ -631,18 +664,18 @@ premium online-slot game art, hand-painted 2.5D illustration, chunky readable
 shapes, clean dark plum outlines (#1D1424) of even medium weight, soft
 painterly shading with crisp edge highlights, warm golden key light from the
 top-left, cool blue rim light from the back-right, not photorealistic.
---ar 6:5
+--ar 6:5 --sref [SANTA_REF] --sw 200
 <<<
 
 6.2 MOBILE REEL FRAME   (reel_frame_mobile.png)
 >>>
 Same ornate slot machine reel frame as reference: thick carved dark wood with
 polished gold trim, snow on top with icicles, pine and holly garland, gold
-bells, empty dark plum #0F0B18 interior with four thin vertical dividers, but
+stars (no bells), empty dark plum #0F0B18 interior with four thin vertical dividers, but
 with slimmer side borders and a taller top garland area for a phone screen.
 Perfectly symmetrical, centered, isolated on a plain flat mid-grey #808080
 background. Stylized premium online-slot game art, hand-painted 2.5D, clean
-dark plum outlines (#1D1424), not photorealistic. --ar 1:1
+dark plum outlines (#1D1424), not photorealistic. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 ================================================================================
@@ -662,7 +695,7 @@ mid-grey #808080 background. Stylized premium online-slot game art,
 hand-painted 2.5D illustration, chunky readable shapes, clean dark plum
 outlines (#1D1424), soft painterly shading with crisp edge highlights, warm
 golden key light from the top-left, cool blue rim light from the back-right,
-not photorealistic, no text. --ar 3:2
+not photorealistic, no text. --ar 3:2 --sref [SANTA_REF] --sw 200
 <<<
 Lettering spec for the designer: "CLAUS" in gold-to-cream gradient, "&" in
 white, "KRAMPUS" in violet-to-ice gradient; font Lilita One, thick #1D1424
@@ -682,7 +715,7 @@ illustration, chunky readable shapes and bold silhouettes, clean dark plum
 outlines (#1D1424) of even medium weight, soft painterly shading with crisp
 edge highlights, warm golden key light from the top-left, cool blue rim light
 from the back-right, saturated but controlled festive palette, polished
-mobile-game finish, not photorealistic, no text. --ar 4:3
+mobile-game finish, not photorealistic, no text. --ar 4:3 --sref [SANTA_REF] --sw 200
 <<<
 
 8.1 [SUBJECT] VALUES
@@ -698,6 +731,9 @@ mobile-game finish, not photorealistic, no text. --ar 4:3
    Kling / Runway / Luma / Veo). Generate keyframes with the --cref and --sref
    references. Length 4–6 s, 24–30 fps, 16:9 + 9:16. No text in video — the
    title is overlaid in engine.
+   Video: always use the approved KEYFRAME as the start image. For the
+   Mystery outcomes (9.5–9.7) use the LAST FRAME of the 9.4 shake clip, so
+   the clips cut together seamlessly.
 ================================================================================
 
 9.1 STOCKING SPINS INTRO
@@ -709,7 +745,7 @@ wooden mantel with five gold hooks, magical sparkles. Stylized premium
 online-slot game art, hand-painted 2.5D illustration, chunky readable shapes,
 clean dark plum outlines (#1D1424), soft painterly shading with crisp edge
 highlights, warm golden key light, saturated festive palette, not
-photorealistic, no text. --ar 16:9
+photorealistic, no text. --ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 VIDEO >>>
 Camera pushes smoothly down the chimney into the workshop, embers drift up
@@ -731,7 +767,7 @@ shimmering gold stockings on a mantel behind him. Stylized premium
 online-slot game art, hand-painted 2.5D illustration, chunky readable shapes,
 clean dark plum outlines (#1D1424), soft painterly shading with crisp edge
 highlights, warm golden key light from the top-left, not photorealistic, no
-writing on the scroll. --ar 16:9
+writing on the scroll. --ar 16:9 --sref [SANTA_REF] --sw 200 --oref [SANTA_REF] --ow 100
 <<<
 VIDEO >>>
 Santa smiles and flicks the scroll open, it unrolls toward the camera and
@@ -749,7 +785,7 @@ cracks spreading across the frame from the center, snow swirling, rusty
 chains hanging in the foreground, cold blue moonlight rim. Stylized premium
 online-slot game art, hand-painted 2.5D illustration, chunky readable shapes,
 clean dark plum outlines (#1D1424), soft painterly shading, cool blue rim
-light, spooky-fun mood not terrifying, not photorealistic, no text. --ar 16:9
+light, spooky-fun mood not terrifying, not photorealistic, no text. --ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 VIDEO >>>
 The town's window lights switch off one by one, the screen goes dark, two
@@ -768,7 +804,7 @@ stage spotlight, faint light leaking from the seams of the lid, snow particles
 floating. Stylized premium online-slot game art, hand-painted 2.5D
 illustration, chunky readable shapes, clean dark plum outlines (#1D1424), soft
 painterly shading with crisp edge highlights, not photorealistic, no text.
---ar 16:9
+--ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 VIDEO >>>
 The giant present shakes three times, harder each time, light leaking
@@ -789,7 +825,7 @@ keep style identical.
 9.6 MYSTERY — GOLDEN STOCKING OUTCOME
 VIDEO (from 9.4 last frame) >>>
 The lid lifts slowly and warm golden light pours out, Santa's white-gloved
-hand lifts the lid fully, gold stars and sparkles burst upward, two gold
+hand in a crimson sleeve with white fur cuff lifts the lid fully, gold stars and sparkles burst upward, two gold
 stockings float out of the box. 3 seconds, joyful, keep style identical.
 <<<
 
@@ -804,12 +840,14 @@ style identical.
 9.8 SLEIGH RUN (1.5 s fly-by, plays often — keep short)
 KEYFRAME >>>
 Game effect frame: Santa's red wooden sleigh with gold runners pulled by
-three brown reindeer (front one with a glowing red nose) flying left to right
+three reindeer matching the H3 Reindeer symbol (warm brown fur, cream
+muzzle, big branching antlers, red studded collars with gold star tags, no
+bells), the front one with a glowing red nose, flying left to right
 across a dusk sky above snowy rooftops, a trail of falling wrapped presents
 and sparkles below the sleigh. Stylized premium online-slot game art,
 hand-painted 2.5D illustration, chunky readable shapes, clean dark plum
 outlines (#1D1424), warm golden key light, not photorealistic, no text.
---ar 16:9
+--ar 16:9 --sref [SANTA_REF] --sw 200 --oref [REINDEER_REF] --ow 80
 <<<
 VIDEO >>>
 The sleigh streaks fast from the left edge to the right edge of the frame,
@@ -833,7 +871,7 @@ symmetrical, isolated on a plain flat mid-grey #808080 background. Stylized
 premium online-slot game art, hand-painted 2.5D illustration, chunky readable
 shapes, clean dark plum outlines (#1D1424), soft painterly shading with crisp
 edge highlights, warm golden key light from the top-left, not photorealistic,
-no text. --ar 3:1
+no text. --ar 3:1 --sref [SANTA_REF] --sw 200
 <<<
 
 10.1 [TIER] VALUES
@@ -854,7 +892,7 @@ Game VFX sprite sheet: [EFFECT], several variations arranged in a neat grid
 with generous spacing, each element separate and not touching, isolated on a
 pure black #000000 background. Stylized hand-painted game effect, clean
 shapes, soft glow, consistent with stylized premium online-slot game art, not
-photorealistic, no text. --ar 1:1
+photorealistic, no text. --ar 1:1 --sref [SANTA_REF] --sw 200
 <<<
 
 11.2 [EFFECT] VALUES
@@ -867,6 +905,23 @@ photorealistic, no text. --ar 1:1
   vfx_smoke.png          : 8 soft grey-lavender chimney smoke puffs, round cartoon shapes
   vfx_coal.png           : 6 lumps of coal with glowing orange ember cracks
   vfx_coins.png          : 8 shiny gold coins at different rotation angles, embossed with a tiny snowflake
+
+11.3 KRAMPUS ROOFTOP LEAP SPRITE   (prop_krampus_leap.png — the base and Ante
+     backgrounds show Krampus hopping across the rooftops now and then)
+>>>
+Full-body side view of a mischievous Christmas Krampus mid-leap from left to
+right, both legs tucked, arms spread, rusty chain trailing behind him, dark
+violet-brown shaggy fur #4A2F5E, large curled ram-like horns in pale bone
+#D9C7A3, glowing amber-yellow eyes #FFD34D, cheeky goblin-like grin, ragged
+dark pine-green coat with dirty cream fur trim flapping, bundle of birch
+switches on his back. Single subject, small and readable as a silhouette,
+isolated on a plain flat mid-grey #808080 background, no shadow. Stylized
+premium online-slot game art, hand-painted 2.5D illustration, chunky readable
+shapes and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
+weight, soft painterly shading with crisp edge highlights, cool blue rim light
+from the back-right, not photorealistic. --ar 3:2 --sref [SANTA_REF] --sw 200 --oref [KRAMPUS_REF] --ow 100
+<<<
+(Deliver 3 poses: crouch, mid-leap, landing — for a simple 3-frame hop.)
 
 ================================================================================
 12. STORE / LOADING
@@ -891,8 +946,11 @@ illustration, chunky readable shapes and bold silhouettes, clean dark plum
 outlines (#1D1424), soft painterly shading with crisp edge highlights, warm
 golden key light from the top-left, cool blue rim light from the back-right,
 saturated festive palette, polished finish, not photorealistic, no text.
---ar 1:1
+--ar 1:1 --sref [SANTA_REF] --sw 200 --oref [SANTA_REF] --ow 100
 <<<
+
+(Then inpaint the Krampus half with Vary Region using --oref [KRAMPUS_REF] --ow 100,
+ so both characters match their references.)
 
 12.2 LOADING SCREEN   (loading_screen.png, 16:9 and 9:16)
 >>>
@@ -904,7 +962,7 @@ empty area in the upper center for the logo and an empty area at the bottom
 for a loading bar. Stylized premium online-slot game art, hand-painted 2.5D
 illustration, chunky readable shapes, clean dark plum outlines (#1D1424), soft
 painterly shading, warm golden key light from the top-left, not
-photorealistic, no text. --ar 16:9
+photorealistic, no text. --ar 16:9 --sref [SANTA_REF] --sw 200
 <<<
 
 ================================================================================
