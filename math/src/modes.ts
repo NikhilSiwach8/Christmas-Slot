@@ -102,7 +102,7 @@ export const gameModes = defineGameModes({
     reelSets,
     resultSets: [
       rs({ criteria: "bonus", quota: 0.99, fs: "bonus" }),
-      rs({ criteria: "maxwin", quota: 0.004, fs: "bonus", forceMaxWin: true, userData: { boost: true } }),
+      rs({ criteria: "maxwin", quota: 0.001, fs: "bonus", forceMaxWin: true, userData: { boost: true } }),
     ],
   }),
   super: new GameMode({

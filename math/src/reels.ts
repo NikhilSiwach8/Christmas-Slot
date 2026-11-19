@@ -30,6 +30,6 @@ export const REELS = {
   fsBoost: new GeneratedReelSet({
     id: "fsBoost",
     ...common,
-    symbolWeights: { S: 2, W: 30, H1: 22, H2: 20, H3: 18, H4: 18, L1: 22, L2: 22, L3: 22, L4: 20, L5: 20 },
+    symbolWeights: { S: 6, W: 34, H1: 22, H2: 20, H3: 18, H4: 18, L1: 22, L2: 22, L3: 22, L4: 20, L5: 20 },
   }),
 } as const

@@ -5,10 +5,13 @@
   "type": "commonjs",
   "scripts": {
     "sim": "tsx ./index.ts --slot-engine-run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lgs": "tsx ./lgs.ts",
+    "verify": "node tools/verify.mjs"
   },
   "dependencies": {
-    "@slot-engine/core": "0.4.0"
+    "@slot-engine/core": "0.4.0",
+    "@slot-engine/lgs": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

@@ -89,17 +89,17 @@ The menu copies the reference layout: a 3×2 card grid with volatility stars, a 
 | 1 | — | Base | 1× | Standard play |
 | 2 | **Naughty List Ante** | Activate | 3× | Bonus triggers about 5.6× more often, plus **at least 1 Gift Wild guaranteed** every spin |
 | 3 | **Sleigh Run Spins** (Mini) | Activate | 100× | Every spin is a guaranteed Sleigh Run (4–8 gifts, Nice values up to ×10) |
-| 4 | **Midnight Run Spins** (Mega) | Activate | 1,000× | Every spin is a guaranteed Golden Sleigh Run: 8–14 gifts, at least ×3 Nice, values up to ×25, one guaranteed Chain Wild |
-| 5 | **Stocking Spins** (Bonus) | Buy | 250× | Bonus: 10 free spins, stockings start at ×0 |
-| 6 | **Golden Stocking Spins** (Super Bonus) | Buy | 500× | 12 free spins, **every stocking starts at ×2**, Gift Wilds are **sticky** |
+| 4 | **Midnight Run Spins** (Mega) | Activate | 1,000× | Every spin is a guaranteed Golden Sleigh Run: 6–10 gifts, Nice values ×2–×25, one guaranteed Chain Wild |
+| 5 | **Stocking Spins** (Bonus) | Buy | 250× | Bonus: 10 free spins, stockings start at ×1 |
+| 6 | **Golden Stocking Spins** (Super Bonus) | Buy | 500× | 12 free spins, **every stocking starts at ×2**, Krampus chain wilds are **sticky** |
 | 7 | **Mystery Present** (Hidden Bonus) | Buy | 500× | Unwrap one giant present: **40% Coal** (no bonus) · **40% Golden Stocking Spins** · **20% KRAMPUSNACHT** |
 
 ### 4.1 Bonuses in detail
 **Stocking Spins (Bonus).** Triggered naturally by 3 Bells. 10 spins. Stockings as in §3.3. Retriggers: 2 Bells give +2 spins, 3 Bells give +4.
 
-**Golden Stocking Spins (Super Bonus).** Triggered naturally by 4 Bells. 12 spins. All stockings start at ×2. Gift Wilds stay sticky for the rest of the bonus and feed their stocking again on every spin they stay.
+**Golden Stocking Spins (Super Bonus).** Triggered naturally by 4 Bells. 12 spins. All stockings start at ×2. Cells converted by Krampus chains stay wild for the rest of the bonus. (Making every gift sticky averaged ~2,000×, four times the 481× target, so stickiness was narrowed to chains.)
 
-**KRAMPUSNACHT (Hidden Bonus).** Triggered naturally by 5 Bells, which is very rare and stays secret: it isn't in the paytable until the player has seen it once. Otherwise it only comes from the Mystery Present. 10 spins. A blizzard covers the board. Stockings **multiply together** instead of adding (for example, stockings 2, 3 and 4 give ×24), Chain Wilds are sticky, and Krampus fills one random stocking by +1 every spin. Almost all 10,000× wins come from here.
+**KRAMPUSNACHT (Hidden Bonus).** Triggered naturally by 5 Bells (about 1 in 117,000 base spins) or by the Mystery Present. 10 spins. A blizzard covers the board. Stockings start at ×1, Nice gifts add +1/+2/+3, Chain Wilds are sticky, Krampus adds +1 to a random stocking every spin, and the stockings over a win **multiply together** instead of adding (for example, stockings 2, 3 and 4 give ×24). It's "hidden" in presentation only: Stake requires every feature to be described in the rules, so it's listed there.
 
 > **Compliance flag for the Mystery Present:** a buy that can return nothing (the 40% Coal outcome) is allowed on some RGS and jurisdictions and banned on others. If the target platform doesn't allow it, the fallback is: 40% Stocking Spins / 40% Golden / 20% Krampusnacht, with the odds rebalanced to the same RTP.
 
@@ -225,3 +225,31 @@ Layered parallax scenes (Spine or particle systems), with a different scene per 
 3. Art: moodboard, then character sketches (Santa, Krampus), then a symbol frame kit, then UI kit (hex buttons, bar, menu cards).
 4. Playable greybox (web, PixiJS + Spine): base, wild reveals, bonus, and the feature menu.
 5. Intro clip animatics, then final art, audio and polish.
+
+---
+
+## 11. Implementation status (built)
+
+| Area | Where | Status |
+|---|---|---|
+| Math model (all 7 modes) | `math/` (`@slot-engine/core`) | Done: 100k sims per mode, optimized to 96.20% |
+| Independent math check | `math/tools/verify.mjs` | All Stake math checks pass |
+| Local RGS | `math/lgs.ts` (`@slot-engine/lgs`) | Done |
+| Frontend | `web/` (Vite, PixiJS 8, `stake-engine` client) | Playable prototype |
+| Final illustrated art, audio, Spine intro clips | — | Not started (vector and synth placeholders in place) |
+
+**Verified results (published lookup tables, 100,000 books per mode):**
+
+| Mode | Cost | RTP | Hit rate | 10,000× odds | Feature stats |
+|---|---|---|---|---|---|
+| Base | 1× | 96.200% | 1 in 4 | 1 in 5.0 M | Bonus 1 in 860 (avg 240.8×), Super 1 in 6,900 (483×), Krampusnacht 1 in 117k (1,406×), Sleigh Run 1 in 68 |
+| Naughty List Ante | 3× | 96.200% | 1 in 3 | 1 in 1.5 M | Bonus 1 in 150, Super 1 in 1,370, Krampusnacht 1 in 25k |
+| Sleigh Run Spins | 100× | 96.200% | — | 1 in 200k | avg 96.2× |
+| Midnight Run Spins | 1,000× | 96.200% | — | 1 in 3,000 | avg 962× |
+| Stocking Spins | 250× | 96.200% | — | 1 in 60k | avg 240.5× |
+| Golden Stocking Spins | 500× | 96.200% | — | 1 in 10k | avg 481× |
+| Mystery Present | 500× | 96.200% | — | 1 in 1,000 | 40% Coal / 40% Golden (481×) / 20% Krampusnacht (1,443×) |
+
+Deviations from the original draft, all made to hit the targets: Stocking Spins start at ×1, Midnight Run drops 6–10 gifts, Golden stickiness applies to chains only, and Krampusnacht uses smaller Nice values. Sleigh Run Spins and Midnight Run Spins can't trigger free spins.
+
+**Open risk:** Stake Engine bans "gamble features". The Mystery Present's 40% Coal outcome may be read as one. Confirm with Stake before submitting; the fallback (no zero outcome) only needs a change to the `mystery` result sets in `math/src/modes.ts`.

@@ -15,10 +15,8 @@ const index = JSON.parse(fs.readFileSync(path.join(dir, "index.json"), "utf8"))
 
 async function readBooks(file) {
   const out = new Map()
-  const chunks = []
-  new Decompress((c) => chunks.push(c)).push(fs.readFileSync(file), true)
-  for (const line of Buffer.concat(chunks).toString("utf8").split("\n")) {
-    if (!line.trim()) continue
+  const handle = (line) => {
+    if (!line.trim()) return
     const b = JSON.parse(line)
     const fsStart = b.events.find((e) => e.type === "freeSpinsStart")
     const mystery = b.events.find((e) => e.type === "mysteryReveal")
@@ -28,6 +26,19 @@ async function readBooks(file) {
       feature: mystery?.data.outcome === "coal" ? "coal" : (fsStart?.data.kind ?? (sleigh ? "sleigh" : "none")),
     })
   }
+  // Stream-decode: books can exceed the max JS string length when fully inflated.
+  const decoder = new TextDecoder()
+  let rest = ""
+  const d = new Decompress((chunk) => {
+    const text = rest + decoder.decode(chunk, { stream: true })
+    const lines = text.split("\n")
+    rest = lines.pop()
+    for (const l of lines) handle(l)
+  })
+  const buf = fs.readFileSync(file)
+  const STEP = 1 << 20
+  for (let i = 0; i < buf.length; i += STEP) d.push(buf.subarray(i, i + STEP), i + STEP >= buf.length)
+  handle(rest)
   return out
 }
 

@@ -1,0 +1,21 @@
+{
+  "name": "claus-krampus-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/lilita-one": "^5.1.0",
+    "@fontsource/rubik": "^5.1.0",
+    "pixi.js": "^8.6.6",
+    "stake-engine": "^0.1.32"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  }
+}

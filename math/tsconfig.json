@@ -9,5 +9,5 @@
     "noUncheckedIndexedAccess": false,
     "outDir": "dist"
   },
-  "include": ["index.ts", "src/**/*.ts"]
+  "include": ["index.ts", "lgs.ts", "src/**/*.ts"]
 }
