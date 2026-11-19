@@ -1,7 +1,23 @@
 ================================================================================
- CLAUS & KRAMPUS — COMPLETE ASSET PROMPT SHEET  (v1.0)
+ CLAUS & KRAMPUS — COMPLETE ASSET PROMPT SHEET  (v1.1)
  Image / video / audio prompts, ready to copy-paste. Matches docs/GDD.md.
 ================================================================================
+
+CHANGELOG
+---------
+v1.1  Santa symbol is now the master style/character reference (not the
+      Santa sheet). Krampus wears a dark pine-green coat (never red), has a
+      less human goblin-like face with fewer teeth, and his reel symbol drops
+      the switches and bells and is cropped tighter. Santa symbol cropped at
+      the collar (no belt). Pom-pom side fixed to "viewer's left".
+
+CURRENT PICKS (use as references)
+---------------------------------
+  sym_H1_santa   — keep; MASTER REFERENCE (crop to the collar on paint-over)
+  sym_H3_reindeer— keep (passes the 64 px and greyscale check)
+  char_krampus   — regenerate with v1.1 description (green coat)
+  sym_H2_krampus — regenerate with v1.1 prompt
+  char_santa     — not a reference; optional animator guide only
 
 HOW TO USE THIS FILE
 --------------------
@@ -12,14 +28,18 @@ HOW TO USE THIS FILE
 2. Always also paste the NEGATIVE PROMPT (section 0.3) into the negative field.
    (Midjourney: add it after "--no", comma separated.)
 3. CONSISTENCY RULES — do these in order:
-   a) Generate the two CHARACTER SHEETS first (section 1). Pick the best Santa
-      and the best Krampus. These become your REFERENCE IMAGES.
-   b) For every later prompt that shows Santa or Krampus, attach the chosen
-      sheet as image/character reference (Midjourney: --cref <url> --cw 80;
-      Flux/Leonardo: Character Reference / IP-Adapter at 0.6–0.8).
-   c) Generate the H1 Santa symbol first, pick the best, then attach it as a
-      STYLE reference for every other asset (Midjourney: --sref <url> --sw 200;
-      others: Style Reference 0.5–0.7). This locks line weight, shading, palette.
+   a) The approved H1 SANTA SYMBOL (section 2.1) is the MASTER REFERENCE.
+      Attach it as STYLE reference to every asset (Midjourney: --sref <url>
+      --sw 200; others: Style Reference 0.5–0.7). This locks line weight,
+      shading, palette and finish.
+   b) For anything showing Santa, ALSO attach the Santa symbol as CHARACTER
+      reference (Midjourney: --cref <url> --cw 80; Flux/Leonardo: Character
+      Reference / IP-Adapter at 0.6–0.8). Do NOT use the Santa character
+      sheet as a reference: it came out flatter and more generic. The sheet
+      is only a pose/expression guide for animators.
+   c) For anything showing Krampus, attach the approved Krampus character
+      sheet (regenerated with the green coat, section 1.2) as CHARACTER
+      reference, plus the Santa symbol as STYLE reference.
    d) Re-use the same seed per asset family (all symbols one seed, all
       backgrounds one seed) when your tool supports it.
    e) Never let the AI write text. All words (logo lettering, WIN banners,
@@ -57,6 +77,9 @@ polished mobile-game finish, not photorealistic
   Krampus violet       #6E3FB3   highlight #A883FF   shadow #2D1458
   Sapphire / ice blue  #2F6FC2   highlight #86C2FF   shadow #0F2F63
   Krampus fur          #4A2F5E   horn bone #D9C7A3   eyes #FFD34D
+  Krampus coat         #1F4A35 (dark pine green)   trim #C9B48A (dirty cream)
+                       NEVER red: red belongs to Santa only, so H1 and H2
+                       stay distinct at 64 px.
   Warm skin            #F4C19A   cheeks #EF8A8A
   Dusk sky             #141A44 -> #D9785A
   Lighting rule: warm key light top-left, cool rim back-right, on EVERY asset.
@@ -75,17 +98,23 @@ muddy colors, oversaturated neon, horror gore, blood
 single centered subject filling about 80% of a square canvas, facing the
 viewer in a slight three-quarter view, strong readable silhouette, isolated on
 a plain flat mid-grey #808080 background, no frame, no shadow on background
+CHARACTER BUSTS (Santa, Krampus, Reindeer, Snowman) also use: tight crop with
+the face filling most of the tile, the bust ending in a smooth rounded bottom
+curve at the collar line (same cut-off shape on all four)
 
 0.5 FIXED CHARACTER DESCRIPTIONS (copy these exact words — never change them)
 SANTA: jolly round-faced Santa Claus, rosy cheeks, small round red nose,
 twinkling dark eyes, big fluffy snow-white beard and curled moustache, red
-velvet hat with white fur trim and white pom-pom flopping to his left, warm
+velvet hat with white fur trim and white pom-pom flopping to the viewer's left, warm
 kind smile, crimson #C2283A coat with white fur collar and gold buckle.
 KRAMPUS: mischievous Christmas Krampus, dark violet-brown shaggy fur #4A2F5E,
 two large curled ram-like horns in pale bone #D9C7A3, glowing amber-yellow
-eyes #FFD34D, wide toothy grin with a long pink tongue, pointed ears, rusty
-iron chain draped over one shoulder, bundle of birch switches; cheeky and
-spooky-fun, never gory or truly frightening.
+eyes #FFD34D, cheeky goblin-like grin with fewer teeth and a long pink tongue,
+less human face, pointed ears, wearing a ragged dark pine-green coat with
+dirty cream fur trim (not red), rusty iron chain draped over one shoulder;
+cheeky and spooky-fun, never gory or truly frightening.
+KRAMPUS PROPS (full-body / intro shots only, never on the reel symbol):
+bundle of birch switches on his back, small brass bells on the chain.
 
 --------------------------------------------------------------------------------
 ASSET LIST (filenames / deliver sizes)
@@ -131,25 +160,31 @@ ASSET LIST (filenames / deliver sizes)
 Character model sheet of a jolly round-faced Santa Claus, rosy cheeks, small
 round red nose, twinkling dark eyes, big fluffy snow-white beard and curled
 moustache, red velvet hat with white fur trim and white pom-pom flopping to
-his left, warm kind smile, crimson #C2283A coat with white fur collar and gold
-buckle. Shown as five views in one row on a plain light grey background: front
+the viewer's left, warm kind smile, crimson #C2283A coat with white fur collar
+and gold buckle. Shown as five views in one row on a plain light grey background: front
 bust, three-quarter bust, side profile, laughing expression close-up, winking
 expression close-up. Same character, same proportions and colors in every
-view. Stylized premium online-slot game art, hand-painted 2.5D illustration,
-chunky readable shapes and bold silhouettes, clean dark plum outlines (#1D1424)
-of even medium weight, soft painterly shading with crisp edge highlights, warm
-golden key light from the top-left, cool blue rim light from the back-right,
-saturated but controlled festive palette, subtle hand-painted brush texture,
-polished mobile-game finish, not photorealistic. --ar 16:9
+view. Match the painting detail of the approved Santa symbol (attach it as
+--sref and --cref): rich painterly fur and beard, not flat cartoon, normal
+sized eyes. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes and bold silhouettes, clean dark plum
+outlines (#1D1424) of even medium weight, soft painterly shading with crisp
+edge highlights, warm golden key light from the top-left, cool blue rim light
+from the back-right, saturated but controlled festive palette, subtle
+hand-painted brush texture, polished mobile-game finish, not photorealistic.
+--ar 16:9
 <<<
+(Optional: only regenerate if animators need it. It is NOT a reference image.)
 
 1.2 KRAMPUS — character turnaround sheet   (file: char_krampus_sheet.png)
 >>>
 Character model sheet of a mischievous Christmas Krampus, dark violet-brown
 shaggy fur #4A2F5E, two large curled ram-like horns in pale bone #D9C7A3,
-glowing amber-yellow eyes #FFD34D, wide toothy grin with a long pink tongue,
-pointed ears, rusty iron chain draped over one shoulder, bundle of birch
-switches; cheeky and spooky-fun, never gory or truly frightening. Shown as
+glowing amber-yellow eyes #FFD34D, cheeky goblin-like grin with fewer teeth
+and a long pink tongue, less human face, pointed ears, wearing a ragged dark
+pine-green coat with dirty cream fur trim (not red), rusty iron chain with
+small brass bells draped over one shoulder, bundle of birch switches on his
+back; cheeky and spooky-fun, never gory or truly frightening. Shown as
 five views in one row on a plain light grey background: front bust,
 three-quarter bust, side profile, laughing expression close-up, full-body
 crouching pose holding the chain. Same character, same proportions and colors
@@ -164,7 +199,7 @@ hand-painted brush texture, polished mobile-game finish, not photorealistic.
 
 ================================================================================
 2. REEL SYMBOLS  (all 1:1, isolated on grey, cut out afterwards)
-   Generate H1 first and use it as --sref for all others.
+   H1 Santa is the master reference: attach it as --sref for all others.
 ================================================================================
 
 2.1 H1 — SANTA   (sym_H1_santa.png)
@@ -172,11 +207,13 @@ hand-painted brush texture, polished mobile-game finish, not photorealistic.
 Slot machine symbol: head-and-shoulders bust of a jolly round-faced Santa
 Claus, rosy cheeks, small round red nose, twinkling dark eyes, big fluffy
 snow-white beard and curled moustache, red velvet hat with white fur trim and
-white pom-pom flopping to his left, warm kind smile, crimson #C2283A coat with
-white fur collar and gold buckle. Big cheerful laugh, eyes squinting with joy.
-Single centered subject filling about 80% of a square canvas, facing the
-viewer in a slight three-quarter view, strong readable silhouette, isolated on
-a plain flat mid-grey #808080 background, no frame, no shadow on background.
+white pom-pom flopping to the viewer's left, warm kind smile, crimson #C2283A
+coat with white fur collar. Big cheerful laugh, eyes squinting with joy.
+Tight crop: the face fills most of the tile, the bust ends at the white fur
+collar in a smooth rounded bottom curve, no belt and no buckle visible.
+Single centered subject, facing the viewer in a slight three-quarter view,
+strong readable silhouette, isolated on a plain flat mid-grey #808080
+background, no frame, no shadow on background.
 Stylized premium online-slot game art, hand-painted 2.5D illustration, chunky
 readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
 even medium weight, soft painterly shading with crisp edge highlights, warm
@@ -189,13 +226,16 @@ polished mobile-game finish, not photorealistic. --ar 1:1
 >>>
 Slot machine symbol: head-and-shoulders bust of a mischievous Christmas
 Krampus, dark violet-brown shaggy fur #4A2F5E, two large curled ram-like horns
-in pale bone #D9C7A3, glowing amber-yellow eyes #FFD34D, wide toothy grin with
-a long pink tongue, pointed ears, rusty iron chain draped over one shoulder,
-bundle of birch switches; cheeky and spooky-fun, never gory or truly
-frightening. Leaning slightly forward with a sly grin. Single centered subject
-filling about 80% of a square canvas, facing the viewer in a slight
-three-quarter view, strong readable silhouette, isolated on a plain flat
-mid-grey #808080 background, no frame, no shadow on background. Stylized
+in pale bone #D9C7A3, glowing amber-yellow eyes #FFD34D, cheeky goblin-like
+grin with fewer teeth and a long pink tongue, less human face, pointed ears,
+wearing a ragged dark pine-green coat with dirty cream fur trim (not red), a
+short piece of rusty iron chain on one shoulder; cheeky and spooky-fun, never
+gory or truly frightening. Leaning slightly forward with a sly grin. Simple
+and uncluttered: no birch switches, no bells. Tight crop: face and horns fill
+most of the tile, the bust ends at the collar in a smooth rounded bottom
+curve. Single centered subject, facing the viewer in a slight three-quarter
+view, strong readable silhouette, isolated on a plain flat mid-grey #808080
+background, no frame, no shadow on background. Stylized
 premium online-slot game art, hand-painted 2.5D illustration, chunky readable
 shapes and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
 weight, soft painterly shading with crisp edge highlights, warm golden key
@@ -677,7 +717,7 @@ KEYFRAME >>>
 Cinematic game intro frame: Santa (jolly round-faced Santa Claus, rosy cheeks,
 small round red nose, twinkling dark eyes, big fluffy snow-white beard and
 curled moustache, red velvet hat with white fur trim and white pom-pom
-flopping to his left, warm kind smile, crimson #C2283A coat with white fur
+flopping to the viewer's left, warm kind smile, crimson #C2283A coat with white fur
 collar and gold buckle) unrolling a long glowing parchment scroll in a gilded
 workshop, golden light spilling out of the scroll, gold dust swirling, five
 shimmering gold stockings on a mantel behind him. Stylized premium
@@ -733,7 +773,8 @@ brighter from the seams, the ribbon strains and snaps on the third shake.
 VIDEO (from 9.4 last frame) >>>
 The lid pops off and a puff of black soot bursts out, a single lump of coal
 with orange embers drops onto the floor with a thud, Krampus's arm (dark
-violet-brown shaggy fur, rusty chain on the wrist) reaches in from the side
+violet-brown shaggy fur, ragged dark pine-green sleeve, rusty chain on the
+wrist) reaches in from the side
 and waggles a finger teasingly, soot settles. 2.5 seconds, comedic timing,
 keep style identical.
 <<<
@@ -830,10 +871,11 @@ photorealistic, no text. --ar 1:1
 Slot game cover art, key visual: a jolly round-faced Santa Claus (rosy
 cheeks, small round red nose, twinkling dark eyes, big fluffy snow-white beard
 and curled moustache, red velvet hat with white fur trim and white pom-pom
-flopping to his left, crimson coat with white fur collar and gold buckle) on
+flopping to the viewer's left, crimson coat with white fur collar and gold buckle) on
 the left, laughing and holding up a glowing crimson gift with a gold ribbon,
 back to back with a mischievous Krampus (dark violet-brown shaggy fur, large
-curled bone-colored ram horns, glowing amber eyes, toothy grin, rusty chain)
+curled bone-colored ram horns, glowing amber eyes, cheeky goblin-like grin,
+ragged dark pine-green coat with dirty cream fur trim, rusty chain)
 on the right, swinging a chain and holding a violet gift with a black ribbon.
 Left half warm gold light, right half cold violet light, snowy rooftops and a
 big moon behind them, gold sparkles and snow, empty space at the top third
@@ -914,7 +956,11 @@ CONSISTENCY CHECKLIST (before accepting any asset)
 [ ] Outline is dark plum #1D1424, same weight as the H1 Santa symbol
 [ ] Key light top-left, rim light back-right
 [ ] Colors are inside the master palette (section 0.2)
-[ ] Santa / Krampus match their character sheets (face, hat, horns, eyes)
+[ ] Santa matches the approved H1 Santa symbol; Krampus matches the
+    green-coat Krampus sheet (face, hat, horns, eyes)
+[ ] Krampus never wears red; red is Santa's colour only
+[ ] Character busts: face fills the tile, same rounded bottom cut-off
+[ ] Santa's pom-pom hangs on the viewer's left
 [ ] No text, letters or numbers baked into the image
 [ ] Symbol readable at 64 px and in greyscale; premiums clearly brighter
     and bigger-looking than lows
