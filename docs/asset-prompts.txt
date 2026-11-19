@@ -1,10 +1,13 @@
 ================================================================================
- CLAUS & KRAMPUS — COMPLETE ASSET PROMPT SHEET  (v1.1)
+ CLAUS & KRAMPUS — COMPLETE ASSET PROMPT SHEET  (v1.2)
  Image / video / audio prompts, ready to copy-paste. Matches docs/GDD.md.
 ================================================================================
 
 CHANGELOG
 ---------
+v1.2  Reindeer collar: no bell (it looked like the Sleigh Bell scatter); a
+      gold star tag instead. All character busts turn toward the viewer's
+      right (matches the approved picks).
 v1.1  Santa symbol is now the master style/character reference (not the
       Santa sheet). Krampus wears a dark pine-green coat (never red), has a
       less human goblin-like face with fewer teeth, and his reel symbol drops
@@ -13,11 +16,12 @@ v1.1  Santa symbol is now the master style/character reference (not the
 
 CURRENT PICKS (use as references)
 ---------------------------------
-  sym_H1_santa   — keep; MASTER REFERENCE (crop to the collar on paint-over)
-  sym_H3_reindeer— keep (passes the 64 px and greyscale check)
-  char_krampus   — regenerate with v1.1 description (green coat)
-  sym_H2_krampus — regenerate with v1.1 prompt
-  char_santa     — not a reference; optional animator guide only
+  sym_H1_santa   — APPROVED v1.1 (collar crop, laughing). MASTER REFERENCE
+  sym_H2_krampus — APPROVED v1.1 (green coat, no switches, tight crop)
+  char_krampus   — APPROVED v1.1 (green coat). Krampus CHARACTER reference
+  char_santa     — v1.1 matches the symbol; animator guide only
+  sym_H3_reindeer— redo with v1.2 prompt (bell -> star tag); keep the
+                   second version's face and antlers as reference
 
 HOW TO USE THIS FILE
 --------------------
@@ -100,7 +104,8 @@ viewer in a slight three-quarter view, strong readable silhouette, isolated on
 a plain flat mid-grey #808080 background, no frame, no shadow on background
 CHARACTER BUSTS (Santa, Krampus, Reindeer, Snowman) also use: tight crop with
 the face filling most of the tile, the bust ending in a smooth rounded bottom
-curve at the collar line (same cut-off shape on all four)
+curve at the collar line (same cut-off shape on all four), head turned
+slightly toward the viewer's right
 
 0.5 FIXED CHARACTER DESCRIPTIONS (copy these exact words — never change them)
 SANTA: jolly round-faced Santa Claus, rosy cheeks, small round red nose,
@@ -248,8 +253,10 @@ mobile-game finish, not photorealistic. --ar 1:1
 >>>
 Slot machine symbol: head-and-shoulders bust of a friendly cartoon reindeer,
 warm brown fur, cream muzzle, big glossy dark eyes, large branching antlers,
-glowing round red nose, small brass sleigh bell on a red #C2283A leather
-collar with gold studs, happy confident expression. Single centered subject
+glowing round red nose, red #C2283A leather collar with gold studs and a
+small gold star-shaped tag (no bell anywhere), happy confident expression,
+head turned slightly toward the viewer's right, bust ends at the collar in a
+smooth rounded bottom curve. Single centered subject
 filling about 80% of a square canvas, facing the viewer in a slight
 three-quarter view, strong readable silhouette, isolated on a plain flat
 mid-grey #808080 background, no frame, no shadow on background. Stylized
@@ -961,6 +968,7 @@ CONSISTENCY CHECKLIST (before accepting any asset)
 [ ] Krampus never wears red; red is Santa's colour only
 [ ] Character busts: face fills the tile, same rounded bottom cut-off
 [ ] Santa's pom-pom hangs on the viewer's left
+[ ] No bells on any symbol except the Sleigh Bell scatter
 [ ] No text, letters or numbers baked into the image
 [ ] Symbol readable at 64 px and in greyscale; premiums clearly brighter
     and bigger-looking than lows
