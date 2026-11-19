@@ -1,0 +1,924 @@
+================================================================================
+ CLAUS & KRAMPUS — COMPLETE ASSET PROMPT SHEET  (v1.0)
+ Image / video / audio prompts, ready to copy-paste. Matches docs/GDD.md.
+================================================================================
+
+HOW TO USE THIS FILE
+--------------------
+1. Every prompt below is SELF-CONTAINED: it already contains the shared STYLE
+   block, so you can copy one prompt block (between the ">>>" and "<<<" lines)
+   and paste it straight into Midjourney / Flux / Ideogram / Leonardo /
+   GPT-Image / Firefly.
+2. Always also paste the NEGATIVE PROMPT (section 0.3) into the negative field.
+   (Midjourney: add it after "--no", comma separated.)
+3. CONSISTENCY RULES — do these in order:
+   a) Generate the two CHARACTER SHEETS first (section 1). Pick the best Santa
+      and the best Krampus. These become your REFERENCE IMAGES.
+   b) For every later prompt that shows Santa or Krampus, attach the chosen
+      sheet as image/character reference (Midjourney: --cref <url> --cw 80;
+      Flux/Leonardo: Character Reference / IP-Adapter at 0.6–0.8).
+   c) Generate the H1 Santa symbol first, pick the best, then attach it as a
+      STYLE reference for every other asset (Midjourney: --sref <url> --sw 200;
+      others: Style Reference 0.5–0.7). This locks line weight, shading, palette.
+   d) Re-use the same seed per asset family (all symbols one seed, all
+      backgrounds one seed) when your tool supports it.
+   e) Never let the AI write text. All words (logo lettering, WIN banners,
+      numbers, "WILD") are added afterwards in the engine/Photoshop with the
+      game fonts: Lilita One (titles) and Rubik ExtraBold (numbers).
+4. Final art pass: an artist paints over every pick (fix hands, eyes,
+   symmetry, line weight, cleanup). This is what keeps it from looking
+   "AI generated". Check every symbol at 64 px and in greyscale.
+5. Symbols / props are generated on flat grey (#808080) and cut out
+   (background removal) to transparent PNG.
+
+Suggested tool settings
+  Midjourney v7:  --style raw --s 150 --q 1   (+ --ar from each prompt)
+  Flux / SDXL:    CFG 3.5–5, 30–40 steps, same seed per family
+  Upscale finals to the "Deliver" size listed for each asset.
+
+--------------------------------------------------------------------------------
+0. SHARED BLOCKS (already embedded in every prompt — listed here for reference)
+--------------------------------------------------------------------------------
+
+0.1 STYLE BLOCK
+Stylized premium online-slot game art, hand-painted 2.5D illustration, chunky
+readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
+even medium weight, soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+saturated but controlled festive palette, subtle hand-painted brush texture,
+polished mobile-game finish, not photorealistic
+
+0.2 MASTER PALETTE (keep every asset inside this)
+  Ink / outline        #1D1424   (dark plum, never pure black)
+  Santa crimson        #C2283A   highlight #FF6B6B   shadow #5E0D18
+  Gold / brass         #E8B23A   highlight #FFE08A   shadow #7A4A12
+  Pine green           #2F8F57   highlight #7BE0A0   shadow #0F4426
+  Snow white           #F4F8FF   shadow #B9C8E6
+  Krampus violet       #6E3FB3   highlight #A883FF   shadow #2D1458
+  Sapphire / ice blue  #2F6FC2   highlight #86C2FF   shadow #0F2F63
+  Krampus fur          #4A2F5E   horn bone #D9C7A3   eyes #FFD34D
+  Warm skin            #F4C19A   cheeks #EF8A8A
+  Dusk sky             #141A44 -> #D9785A
+  Lighting rule: warm key light top-left, cool rim back-right, on EVERY asset.
+
+0.3 NEGATIVE PROMPT (paste into negative field every time)
+photorealistic, photograph, 3D render, plastic CGI, glossy toy look, anime,
+chibi, pixel art, vector flat clipart, watercolor bleed, sketchy lines, messy
+brush noise, random filigree, over-detailed micro texture, noisy background,
+extra fingers, extra limbs, fused fingers, asymmetrical eyes, cross-eyed,
+deformed face, text, letters, numbers, words, typography, watermark,
+signature, logo, UI elements, border, frame (unless requested), cropped
+subject, cut off, multiple subjects (unless requested), blurry, low contrast,
+muddy colors, oversaturated neon, horror gore, blood
+
+0.4 SYMBOL FRAMING (used in all symbol prompts)
+single centered subject filling about 80% of a square canvas, facing the
+viewer in a slight three-quarter view, strong readable silhouette, isolated on
+a plain flat mid-grey #808080 background, no frame, no shadow on background
+
+0.5 FIXED CHARACTER DESCRIPTIONS (copy these exact words — never change them)
+SANTA: jolly round-faced Santa Claus, rosy cheeks, small round red nose,
+twinkling dark eyes, big fluffy snow-white beard and curled moustache, red
+velvet hat with white fur trim and white pom-pom flopping to his left, warm
+kind smile, crimson #C2283A coat with white fur collar and gold buckle.
+KRAMPUS: mischievous Christmas Krampus, dark violet-brown shaggy fur #4A2F5E,
+two large curled ram-like horns in pale bone #D9C7A3, glowing amber-yellow
+eyes #FFD34D, wide toothy grin with a long pink tongue, pointed ears, rusty
+iron chain draped over one shoulder, bundle of birch switches; cheeky and
+spooky-fun, never gory or truly frightening.
+
+--------------------------------------------------------------------------------
+ASSET LIST (filenames / deliver sizes)
+--------------------------------------------------------------------------------
+ Section  File                              Ratio   Deliver
+ 1        char_santa_sheet.png              16:9    3840x2160
+ 1        char_krampus_sheet.png            16:9    3840x2160
+ 2        sym_H1_santa.png                  1:1     512x512 transparent
+ 2        sym_H2_krampus.png                1:1     512x512 transparent
+ 2        sym_H3_reindeer.png               1:1     512x512 transparent
+ 2        sym_H4_snowman.png                1:1     512x512 transparent
+ 2        sym_L1_gingerbread.png            1:1     512x512 transparent
+ 2        sym_L2_candycane.png              1:1     512x512 transparent
+ 2        sym_L3_ornament.png               1:1     512x512 transparent
+ 2        sym_L4_holly.png                  1:1     512x512 transparent
+ 2        sym_L5_mitten.png                 1:1     512x512 transparent
+ 2        sym_W_gift_wrapped.png            1:1     512x512 transparent
+ 2        sym_W_gift_nice.png               1:1     512x512 transparent
+ 2        sym_W_gift_naughty.png            1:1     512x512 transparent
+ 2        sym_W_gift_lid.png                1:1     512x512 transparent
+ 2        sym_S_sleighbell.png              1:1     512x512 transparent
+ 3        frame_H1_ruby.png … frame_S_silver.png (7 frames)  1:1  512x512
+ 4        stocking_red / gold / violet (+ full states)       2:3  512x768
+ 5        bg_base / bg_ante / bg_bonus / bg_super / bg_hidden
+          (each: full + sky + far + mid + near layers)       16:9 3840x2160
+                                                             9:16 2160x3840
+ 6        reel_frame_desktop.png / reel_frame_mobile.png     -       see prompt
+ 7        logo_plate.png (lettering added by designer)       3:2    3000x2000
+ 8        card_ante / card_sleigh / card_midnight /
+          card_stocking / card_golden / card_mystery         4:3    800x600
+ 9        intro keyframes + video prompts (8 clips)          16:9 / 9:16
+ 10       winbanner_plate_*.png (5 tiers + max win)          3:1    2400x800
+ 11       vfx sprites (snow, sparkle, burst, chain, frost, smoke, coal)
+ 12       game_tile.png / loading_screen.png                 see prompt
+ 13       audio prompts (music + SFX)
+
+================================================================================
+1. CHARACTER SHEETS  (generate FIRST — used as reference for everything)
+================================================================================
+
+1.1 SANTA — character turnaround sheet   (file: char_santa_sheet.png)
+>>>
+Character model sheet of a jolly round-faced Santa Claus, rosy cheeks, small
+round red nose, twinkling dark eyes, big fluffy snow-white beard and curled
+moustache, red velvet hat with white fur trim and white pom-pom flopping to
+his left, warm kind smile, crimson #C2283A coat with white fur collar and gold
+buckle. Shown as five views in one row on a plain light grey background: front
+bust, three-quarter bust, side profile, laughing expression close-up, winking
+expression close-up. Same character, same proportions and colors in every
+view. Stylized premium online-slot game art, hand-painted 2.5D illustration,
+chunky readable shapes and bold silhouettes, clean dark plum outlines (#1D1424)
+of even medium weight, soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+saturated but controlled festive palette, subtle hand-painted brush texture,
+polished mobile-game finish, not photorealistic. --ar 16:9
+<<<
+
+1.2 KRAMPUS — character turnaround sheet   (file: char_krampus_sheet.png)
+>>>
+Character model sheet of a mischievous Christmas Krampus, dark violet-brown
+shaggy fur #4A2F5E, two large curled ram-like horns in pale bone #D9C7A3,
+glowing amber-yellow eyes #FFD34D, wide toothy grin with a long pink tongue,
+pointed ears, rusty iron chain draped over one shoulder, bundle of birch
+switches; cheeky and spooky-fun, never gory or truly frightening. Shown as
+five views in one row on a plain light grey background: front bust,
+three-quarter bust, side profile, laughing expression close-up, full-body
+crouching pose holding the chain. Same character, same proportions and colors
+in every view. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes and bold silhouettes, clean dark plum
+outlines (#1D1424) of even medium weight, soft painterly shading with crisp
+edge highlights, warm golden key light from the top-left, cool blue rim light
+from the back-right, saturated but controlled festive palette, subtle
+hand-painted brush texture, polished mobile-game finish, not photorealistic.
+--ar 16:9
+<<<
+
+================================================================================
+2. REEL SYMBOLS  (all 1:1, isolated on grey, cut out afterwards)
+   Generate H1 first and use it as --sref for all others.
+================================================================================
+
+2.1 H1 — SANTA   (sym_H1_santa.png)
+>>>
+Slot machine symbol: head-and-shoulders bust of a jolly round-faced Santa
+Claus, rosy cheeks, small round red nose, twinkling dark eyes, big fluffy
+snow-white beard and curled moustache, red velvet hat with white fur trim and
+white pom-pom flopping to his left, warm kind smile, crimson #C2283A coat with
+white fur collar and gold buckle. Big cheerful laugh, eyes squinting with joy.
+Single centered subject filling about 80% of a square canvas, facing the
+viewer in a slight three-quarter view, strong readable silhouette, isolated on
+a plain flat mid-grey #808080 background, no frame, no shadow on background.
+Stylized premium online-slot game art, hand-painted 2.5D illustration, chunky
+readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
+even medium weight, soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+saturated but controlled festive palette, subtle hand-painted brush texture,
+polished mobile-game finish, not photorealistic. --ar 1:1
+<<<
+
+2.2 H2 — KRAMPUS   (sym_H2_krampus.png)
+>>>
+Slot machine symbol: head-and-shoulders bust of a mischievous Christmas
+Krampus, dark violet-brown shaggy fur #4A2F5E, two large curled ram-like horns
+in pale bone #D9C7A3, glowing amber-yellow eyes #FFD34D, wide toothy grin with
+a long pink tongue, pointed ears, rusty iron chain draped over one shoulder,
+bundle of birch switches; cheeky and spooky-fun, never gory or truly
+frightening. Leaning slightly forward with a sly grin. Single centered subject
+filling about 80% of a square canvas, facing the viewer in a slight
+three-quarter view, strong readable silhouette, isolated on a plain flat
+mid-grey #808080 background, no frame, no shadow on background. Stylized
+premium online-slot game art, hand-painted 2.5D illustration, chunky readable
+shapes and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
+weight, soft painterly shading with crisp edge highlights, warm golden key
+light from the top-left, cool blue rim light from the back-right, saturated
+but controlled festive palette, subtle hand-painted brush texture, polished
+mobile-game finish, not photorealistic. --ar 1:1
+<<<
+
+2.3 H3 — REINDEER   (sym_H3_reindeer.png)
+>>>
+Slot machine symbol: head-and-shoulders bust of a friendly cartoon reindeer,
+warm brown fur, cream muzzle, big glossy dark eyes, large branching antlers,
+glowing round red nose, small brass sleigh bell on a red #C2283A leather
+collar with gold studs, happy confident expression. Single centered subject
+filling about 80% of a square canvas, facing the viewer in a slight
+three-quarter view, strong readable silhouette, isolated on a plain flat
+mid-grey #808080 background, no frame, no shadow on background. Stylized
+premium online-slot game art, hand-painted 2.5D illustration, chunky readable
+shapes and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
+weight, soft painterly shading with crisp edge highlights, warm golden key
+light from the top-left, cool blue rim light from the back-right, saturated
+but controlled festive palette, subtle hand-painted brush texture, polished
+mobile-game finish, not photorealistic. --ar 1:1
+<<<
+
+2.4 H4 — SNOWMAN   (sym_H4_snowman.png)
+>>>
+Slot machine symbol: head-and-shoulders bust of a cheerful snowman, round
+snow-white #F4F8FF head with soft blue shadows, coal-lump eyes and smile,
+orange carrot nose, tall dark top hat with a crimson #C2283A band and a holly
+sprig, knitted pine-green #2F8F57 scarf with white stripes, rosy painted
+cheeks. Single centered subject filling about 80% of a square canvas, facing
+the viewer in a slight three-quarter view, strong readable silhouette,
+isolated on a plain flat mid-grey #808080 background, no frame, no shadow on
+background. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes and bold silhouettes, clean dark plum
+outlines (#1D1424) of even medium weight, soft painterly shading with crisp
+edge highlights, warm golden key light from the top-left, cool blue rim light
+from the back-right, saturated but controlled festive palette, subtle
+hand-painted brush texture, polished mobile-game finish, not photorealistic.
+--ar 1:1
+<<<
+
+2.5 L1 — GINGERBREAD MAN   (sym_L1_gingerbread.png)
+>>>
+Slot machine symbol: a single gingerbread man cookie standing upright, warm
+golden-brown baked dough, white icing squiggles on arms and legs, two
+gumdrop buttons (one crimson, one green), small icing smile and dot eyes,
+slightly glossy sugar sparkle. Single centered object filling about 80% of a
+square canvas, front view, strong readable silhouette, isolated on a plain
+flat mid-grey #808080 background, no frame, no shadow on background.
+Stylized premium online-slot game art, hand-painted 2.5D illustration, chunky
+readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
+even medium weight, soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+saturated but controlled festive palette, subtle hand-painted brush texture,
+polished mobile-game finish, not photorealistic. --ar 1:1
+<<<
+
+2.6 L2 — CANDY CANE   (sym_L2_candycane.png)
+>>>
+Slot machine symbol: a single thick candy cane with a hooked top, glossy
+white with bold crimson #C2283A diagonal stripes and a thin pine-green
+stripe, small pine-green ribbon bow tied below the hook, shiny highlight
+along the curve. Single centered object filling about 80% of a square canvas,
+tilted slightly, strong readable silhouette, isolated on a plain flat mid-grey
+#808080 background, no frame, no shadow on background. Stylized premium
+online-slot game art, hand-painted 2.5D illustration, chunky readable shapes
+and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
+weight, soft painterly shading with crisp edge highlights, warm golden key
+light from the top-left, cool blue rim light from the back-right, saturated
+but controlled festive palette, subtle hand-painted brush texture, polished
+mobile-game finish, not photorealistic. --ar 1:1
+<<<
+
+2.7 L3 — ORNAMENT BAUBLE   (sym_L3_ornament.png)
+>>>
+Slot machine symbol: a single round glass Christmas bauble, deep sapphire
+blue #2F6FC2 glass with two painted gold #E8B23A bands and a small gold star
+in the middle, gold metal cap and loop on top, bright window-shaped
+reflection on the upper left. Single centered object filling about 80% of a
+square canvas, front view, strong readable silhouette, isolated on a plain
+flat mid-grey #808080 background, no frame, no shadow on background.
+Stylized premium online-slot game art, hand-painted 2.5D illustration, chunky
+readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
+even medium weight, soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+saturated but controlled festive palette, subtle hand-painted brush texture,
+polished mobile-game finish, not photorealistic. --ar 1:1
+<<<
+
+2.8 L4 — HOLLY   (sym_L4_holly.png)
+>>>
+Slot machine symbol: a sprig of holly, two glossy pine-green #2F8F57 spiky
+leaves with lighter green veins spreading left and right, a tight cluster of
+three shiny round crimson berries in the center with small white highlights.
+Single centered object filling about 80% of a square canvas, front view,
+strong readable silhouette, isolated on a plain flat mid-grey #808080
+background, no frame, no shadow on background. Stylized premium online-slot
+game art, hand-painted 2.5D illustration, chunky readable shapes and bold
+silhouettes, clean dark plum outlines (#1D1424) of even medium weight, soft
+painterly shading with crisp edge highlights, warm golden key light from the
+top-left, cool blue rim light from the back-right, saturated but controlled
+festive palette, subtle hand-painted brush texture, polished mobile-game
+finish, not photorealistic. --ar 1:1
+<<<
+
+2.9 L5 — MITTEN   (sym_L5_mitten.png)
+>>>
+Slot machine symbol: a single knitted winter mitten, sapphire blue #2F6FC2
+wool with a white snowflake and zig-zag knit pattern, thick fluffy white
+fur cuff, visible chunky knit texture, thumb pointing up-right. Single
+centered object filling about 80% of a square canvas, front view, strong
+readable silhouette, isolated on a plain flat mid-grey #808080 background, no
+frame, no shadow on background. Stylized premium online-slot game art,
+hand-painted 2.5D illustration, chunky readable shapes and bold silhouettes,
+clean dark plum outlines (#1D1424) of even medium weight, soft painterly
+shading with crisp edge highlights, warm golden key light from the top-left,
+cool blue rim light from the back-right, saturated but controlled festive
+palette, subtle hand-painted brush texture, polished mobile-game finish, not
+photorealistic. --ar 1:1
+<<<
+
+2.10 W — GIFT WILD, WRAPPED   (sym_W_gift_wrapped.png)
+>>>
+Slot machine wild symbol: a closed square Christmas present, crimson #C2283A
+wrapping paper with a subtle darker snowflake pattern, wide shiny gold
+#E8B23A satin ribbon crossing over the top and down the front, big fluffy gold
+bow on top, a blank cream-colored gift tag hanging on the front (tag left
+completely empty), box slightly bulging as if something inside is moving.
+Single centered object filling about 80% of a square canvas, front
+three-quarter view from slightly above, strong readable silhouette, isolated
+on a plain flat mid-grey #808080 background, no frame, no shadow on
+background. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes and bold silhouettes, clean dark plum
+outlines (#1D1424) of even medium weight, soft painterly shading with crisp
+edge highlights, warm golden key light from the top-left, cool blue rim light
+from the back-right, saturated but controlled festive palette, subtle
+hand-painted brush texture, polished mobile-game finish, not photorealistic.
+--ar 1:1
+<<<
+(Designer adds "WILD" on the tag in Lilita One.)
+
+2.11 W — GIFT WILD, NICE REVEAL   (sym_W_gift_nice.png)
+>>>
+Slot machine wild symbol, revealed state: the same crimson #C2283A Christmas
+present with gold #E8B23A ribbon, lid popped off and floating just above, warm
+golden light and small gold sparkles bursting upward out of the open box, a
+glowing gold star rising from inside, gold ribbon loose and curling, joyful
+magical feeling. Single centered object filling about 80% of a square canvas,
+front three-quarter view from slightly above, strong readable silhouette,
+isolated on a plain flat mid-grey #808080 background, no frame. Stylized
+premium online-slot game art, hand-painted 2.5D illustration, chunky readable
+shapes and bold silhouettes, clean dark plum outlines (#1D1424) of even medium
+weight, soft painterly shading with crisp edge highlights, warm golden key
+light from the top-left, cool blue rim light from the back-right, saturated
+but controlled festive palette, subtle hand-painted brush texture, polished
+mobile-game finish, not photorealistic. --ar 1:1
+<<<
+(Multiplier "×2 / ×3 / ×5 / ×10 / ×25" badge is added in engine.)
+
+2.12 W — GIFT WILD, NAUGHTY REVEAL   (sym_W_gift_naughty.png)
+>>>
+Slot machine wild symbol, revealed state: a Christmas present wrapped in
+dark violet #3B2A6B paper with a black satin ribbon, lid knocked askew,
+rusty iron chains spilling out of the box, a pair of glowing amber-yellow eyes
+#FFD34D peeking out from the dark gap under the lid, faint violet #9B5CFF glow
+and small soot puffs, mischievous spooky-fun mood, not scary. Single centered
+object filling about 80% of a square canvas, front three-quarter view from
+slightly above, strong readable silhouette, isolated on a plain flat mid-grey
+#808080 background, no frame. Stylized premium online-slot game art,
+hand-painted 2.5D illustration, chunky readable shapes and bold silhouettes,
+clean dark plum outlines (#1D1424) of even medium weight, soft painterly
+shading with crisp edge highlights, warm golden key light from the top-left,
+cool blue rim light from the back-right, saturated but controlled festive
+palette, subtle hand-painted brush texture, polished mobile-game finish, not
+photorealistic. --ar 1:1
+<<<
+
+2.13 W — GIFT LID (separate animation part)   (sym_W_gift_lid.png)
+>>>
+A single square gift box lid seen from the front three-quarter view from
+slightly above, crimson #C2283A wrapping paper with subtle darker snowflake
+pattern, wide shiny gold #E8B23A satin ribbon crossing it, big fluffy gold bow
+on top, nothing else in the image. Centered, filling 70% of a square canvas,
+isolated on a plain flat mid-grey #808080 background, no shadow. Stylized
+premium online-slot game art, hand-painted 2.5D illustration, chunky readable
+shapes, clean dark plum outlines (#1D1424) of even medium weight, soft
+painterly shading with crisp edge highlights, warm golden key light from the
+top-left, cool blue rim light from the back-right, not photorealistic.
+--ar 1:1
+<<<
+
+2.14 S — SLEIGH BELL SCATTER   (sym_S_sleighbell.png)
+>>>
+Slot machine scatter symbol: one large polished brass sleigh bell, round
+golden #E8B23A body with a horizontal seam and a dark slot opening at the
+bottom, small metal ring on top tied with a crimson velvet ribbon bow, a holly
+sprig with three red berries beside the ribbon, bright shiny highlights and a
+soft golden glow around it, tiny sparkle stars. Single centered object filling
+about 80% of a square canvas, front view, strong readable silhouette, isolated
+on a plain flat mid-grey #808080 background, no frame, no shadow on
+background. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes and bold silhouettes, clean dark plum
+outlines (#1D1424) of even medium weight, soft painterly shading with crisp
+edge highlights, warm golden key light from the top-left, cool blue rim light
+from the back-right, saturated but controlled festive palette, subtle
+hand-painted brush texture, polished mobile-game finish, not photorealistic.
+--ar 1:1
+<<<
+
+================================================================================
+3. SYMBOL FRAMES / TILES  (one per tier; symbol sits inside)
+   Same prompt, only the [GEM + METAL + INNER COLOR] line changes.
+================================================================================
+
+3.1 FRAME TEMPLATE — copy, then replace the bracketed line with 3.2 values
+>>>
+Empty square slot symbol tile frame, front view, rounded corners, thick
+ornate bevelled metal border with carved holly-leaf corner ornaments, one
+faceted gemstone set in the middle of the top edge and one in the middle of
+the bottom edge, recessed empty inner panel with a soft vertical gradient and
+a gentle inner shadow, the inner panel is plain with no picture.
+[GEM + METAL + INNER COLOR]
+Perfectly symmetrical, centered, filling 95% of a square canvas, isolated on a
+plain flat mid-grey #808080 background. Stylized premium online-slot game art,
+hand-painted 2.5D, clean dark plum outlines (#1D1424), soft painterly shading
+with crisp edge highlights, warm golden key light from the top-left, cool blue
+rim light from the back-right, not photorealistic. --ar 1:1
+<<<
+
+3.2 VALUES FOR [GEM + METAL + INNER COLOR]
+  frame_H1_ruby.png      : polished gold metal, ruby red gems, inner panel deep crimson #5E0D18 to #C2283A
+  frame_H2_amethyst.png  : polished gold metal, amethyst violet gems, inner panel deep violet #2D1458 to #6E3FB3
+  frame_H3_emerald.png   : polished gold metal, emerald green gems, inner panel deep pine #0F4426 to #2F8F57
+  frame_H4_sapphire.png  : polished gold metal, sapphire blue gems, inner panel deep navy #0F2F63 to #2F6FC2
+  frame_L_iron.png       : dark wrought-iron metal with a light frost rim, no gems, inner panel dark plum #1D1424 to #3A3142
+  frame_W_gold.png       : bright gold metal with tiny gold bows instead of gems, inner panel warm gold #7A4A12 to #E8B23A
+  frame_S_silver.png     : frosted silver metal with ice-crystal gems, inner panel icy blue #0F2F63 to #86C2FF
+
+================================================================================
+4. STOCKINGS  (hang above each reel during free spins)
+   Generate each style in 3 fill states: empty, half-full, overflowing.
+================================================================================
+
+4.1 STOCKING TEMPLATE
+>>>
+A single hanging Christmas stocking, front view, toe pointing right, thick
+fluffy white fur cuff at the top with a small gold hanging loop, knitted body
+with a white stripe band across the middle, [STYLE], [FILL STATE]. Centered,
+filling 85% of a portrait canvas, isolated on a plain flat mid-grey #808080
+background, no shadow. Stylized premium online-slot game art, hand-painted
+2.5D illustration, chunky readable shapes, clean dark plum outlines (#1D1424)
+of even medium weight, soft painterly shading with crisp edge highlights,
+warm golden key light from the top-left, cool blue rim light from the
+back-right, subtle hand-painted brush texture, not photorealistic. --ar 2:3
+<<<
+
+4.2 VALUES
+  [STYLE]
+    stocking_red     : crimson #C2283A knit with a small gold star stitched on the heel   (Stocking Spins)
+    stocking_gold    : shimmering gold #E8B23A knit with tiny sparkles                    (Golden Stocking Spins)
+    stocking_violet  : dark violet #3B2A6B knit with frost crystals and a rusty chain wrapped around it (Krampusnacht)
+  [FILL STATE]
+    _empty           : flat and slightly limp, nothing inside
+    _half            : gently bulging with the top of a small wrapped gift and a candy cane peeking out
+    _full            : bursting full and round, gifts, candy canes and gold coins spilling over the cuff, soft glow
+
+================================================================================
+5. BACKGROUNDS  (16:9 desktop and 9:16 mobile; full image + parallax layers)
+   Keep the CENTER of the image calm and lower contrast: the reels sit there.
+   For 9:16 versions swap "--ar 16:9" for "--ar 9:16" and add
+   "vertical composition, tall sky".
+   Layers: generate the FULL scene, then each layer separately on flat grey
+   (except the sky) so they can scroll at different speeds.
+================================================================================
+
+5.1 BASE — SNOWY ROOFTOP VILLAGE AT DUSK   (bg_base_full.png)
+>>>
+Wide game background illustration: a cozy snowy European rooftop village at
+dusk seen from above the rooftops, steep snow-capped roofs with crooked brick
+chimneys puffing soft smoke, warm glowing yellow windows, distant hills, a
+large pale moon upper right, gentle green aurora ribbons in a deep navy to
+warm peach sky (#141A44 to #D9785A), soft falling snow. Composition: rooftops
+frame the bottom and sides, open calm empty sky area in the center for game
+UI, depth in three clear layers (far hills, middle houses, near rooftops).
+Stylized premium online-slot game art, hand-painted 2.5D illustration, chunky
+readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
+even medium weight, soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+saturated but controlled festive palette, subtle hand-painted brush texture,
+polished mobile-game finish, not photorealistic, no characters. --ar 16:9
+<<<
+
+5.2 ANTE ACTIVE — SAME VILLAGE, NAUGHTY NIGHT   (bg_ante_full.png)
+>>>
+Wide game background illustration: the same cozy snowy European rooftop
+village seen from above the rooftops, but later at night and colder: violet
+aurora ribbons in a deep indigo to purple sky (#120C2E to #6A3D8C), windows
+glowing orange #FF7A3D, glowing coal embers inside the chimneys with violet
+smoke, a few small sets of hoof prints in the roof snow, large pale moon upper
+right, soft falling snow. Composition: rooftops frame the bottom and sides,
+open calm empty sky area in the center for game UI, depth in three clear
+layers. Stylized premium online-slot game art, hand-painted 2.5D illustration,
+chunky readable shapes and bold silhouettes, clean dark plum outlines
+(#1D1424) of even medium weight, soft painterly shading with crisp edge
+highlights, warm golden key light from the top-left, cool blue rim light from
+the back-right, saturated but controlled festive palette, subtle hand-painted
+brush texture, polished mobile-game finish, not photorealistic, no
+characters. --ar 16:9
+<<<
+
+5.3 BONUS — FIREPLACE IN SANTA'S WORKSHOP   (bg_bonus_full.png)
+>>>
+Wide game background illustration: interior of Santa's cozy wooden toy
+workshop at night, big stone fireplace with a crackling warm fire on the
+left, a long mantel with five empty hooks across the top of the image, wooden
+beams, shelves of wrapped toys and gifts, workbenches with tools, garlands of
+pine and red ribbon, warm orange and amber light (#2A120C to #C9612C), a
+frosty window on the right showing falling snow outside. Composition: props
+frame the bottom and sides, open calm empty area in the center for game UI.
+Stylized premium online-slot game art, hand-painted 2.5D illustration, chunky
+readable shapes and bold silhouettes, clean dark plum outlines (#1D1424) of
+even medium weight, soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+saturated but controlled festive palette, subtle hand-painted brush texture,
+polished mobile-game finish, not photorealistic, no characters. --ar 16:9
+<<<
+
+5.4 SUPER BONUS — GILDED WORKSHOP AT MIDNIGHT   (bg_super_full.png)
+>>>
+Wide game background illustration: the same cozy wooden toy workshop
+interior, now magically gilded at midnight: golden light everywhere, gold
+dust floating in the air, a huge glowing parchment Nice List scroll unrolling
+across the back wall, golden garlands, gold-wrapped presents stacked high,
+fireplace burning with golden flames, rich amber palette (#22170A to
+#E2A83C). Composition: props frame the bottom and sides, open calm empty area
+in the center for game UI. Stylized premium online-slot game art,
+hand-painted 2.5D illustration, chunky readable shapes and bold silhouettes,
+clean dark plum outlines (#1D1424) of even medium weight, soft painterly
+shading with crisp edge highlights, warm golden key light from the top-left,
+cool blue rim light from the back-right, saturated but controlled festive
+palette, subtle hand-painted brush texture, polished mobile-game finish, not
+photorealistic, no characters, no text on the scroll. --ar 16:9
+<<<
+
+5.5 HIDDEN BONUS — KRAMPUSNACHT BLIZZARD   (bg_hidden_full.png)
+>>>
+Wide game background illustration: a frozen old-town square at night in a
+howling blizzard, snow blown sideways, icicles on the rooftops, cold blue
+window lights #7AB8FF, a huge shadowy silhouette of Krampus with large curled
+ram-like horns and two glowing amber-yellow eyes #FFD34D looming behind the
+town on the left, rusty chains hanging from lamp posts, cold moonlight, dark
+navy to steel blue palette (#06070F to #2E3A5C), spooky-fun mood not
+terrifying. Composition: buildings frame the bottom and sides, open calm empty
+area in the center for game UI. Stylized premium online-slot game art,
+hand-painted 2.5D illustration, chunky readable shapes and bold silhouettes,
+clean dark plum outlines (#1D1424) of even medium weight, soft painterly
+shading with crisp edge highlights, cool blue rim light, saturated but
+controlled palette, subtle hand-painted brush texture, polished mobile-game
+finish, not photorealistic. --ar 16:9
+<<<
+
+5.6 PARALLAX LAYER PROMPTS (do for each scene; paste the scene's FULL prompt
+    as image reference, then use these)
+  SKY layer   >>> Only the sky of the scene: [paste the sky colors and moon/aurora sentence from the scene], no buildings, no ground, seamless wide panorama, Stylized premium online-slot game art, hand-painted 2.5D, soft painterly shading, not photorealistic. --ar 21:9 <<<
+  FAR layer   >>> Only the distant silhouette layer of the scene: far hills and faint rooftops in one muted color, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines, not photorealistic. --ar 21:9 <<<
+  MID layer   >>> Only the middle row of buildings of the scene with glowing windows and chimneys, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines (#1D1424), warm key light top-left, not photorealistic. --ar 21:9 <<<
+  NEAR layer  >>> Only the closest foreground rooftops / props of the scene, large and darker, snow caps, horizontally tileable, isolated on a plain flat mid-grey #808080 background, Stylized premium online-slot game art, hand-painted 2.5D, clean dark plum outlines (#1D1424), not photorealistic. --ar 21:9 <<<
+  (Interior scenes: FAR = back wall, MID = shelves/fireplace, NEAR = workbench + garland foreground.)
+
+================================================================================
+6. REEL FRAME
+================================================================================
+
+6.1 DESKTOP REEL FRAME   (reel_frame_desktop.png, deliver 2600x2200)
+>>>
+Ornate slot machine reel frame for a 5 column by 4 row grid, front view, a
+thick carved dark wood frame with polished gold trim, snow piled on the top
+edge with small icicles hanging, a garland of pine, holly and tiny red
+baubles across the top corners, a small gold bell in each top corner, the
+inside of the frame is one completely empty dark plum #0F0B18 rectangle with
+four thin vertical divider lines evenly spaced. Perfectly symmetrical,
+centered, isolated on a plain flat mid-grey #808080 background. Stylized
+premium online-slot game art, hand-painted 2.5D illustration, chunky readable
+shapes, clean dark plum outlines (#1D1424) of even medium weight, soft
+painterly shading with crisp edge highlights, warm golden key light from the
+top-left, cool blue rim light from the back-right, not photorealistic.
+--ar 6:5
+<<<
+
+6.2 MOBILE REEL FRAME   (reel_frame_mobile.png)
+>>>
+Same ornate slot machine reel frame as reference: thick carved dark wood with
+polished gold trim, snow on top with icicles, pine and holly garland, gold
+bells, empty dark plum #0F0B18 interior with four thin vertical dividers, but
+with slimmer side borders and a taller top garland area for a phone screen.
+Perfectly symmetrical, centered, isolated on a plain flat mid-grey #808080
+background. Stylized premium online-slot game art, hand-painted 2.5D, clean
+dark plum outlines (#1D1424), not photorealistic. --ar 1:1
+<<<
+
+================================================================================
+7. GAME LOGO PLATE  (lettering added by a designer — do NOT let AI write it)
+================================================================================
+
+7.1 LOGO PLATE   (logo_plate.png)
+>>>
+Empty decorative title plate for a Christmas slot game logo: a wide gold and
+crimson banner shield with an empty smooth center area for lettering, Santa's
+red fur-trimmed hat hooked over the top-left corner and a pair of curled
+bone-colored Krampus horns rising from the top-right corner, a rusty chain
+and a gold ribbon wrapping under the banner, holly sprigs and snow on the
+edges, small gold sparkles. Half nice, half naughty: left side warm gold and
+red, right side violet and frosty. Centered, isolated on a plain flat
+mid-grey #808080 background. Stylized premium online-slot game art,
+hand-painted 2.5D illustration, chunky readable shapes, clean dark plum
+outlines (#1D1424), soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+not photorealistic, no text. --ar 3:2
+<<<
+Lettering spec for the designer: "CLAUS" in gold-to-cream gradient, "&" in
+white, "KRAMPUS" in violet-to-ice gradient; font Lilita One, thick #1D1424
+outline, 6 px bevel highlight, slight upward arc.
+
+================================================================================
+8. FEATURE MENU CARD ART  (top of each card in the buy/activate menu)
+================================================================================
+
+8.0 CARD TEMPLATE — replace [SUBJECT]
+>>>
+Game shop item icon illustration: [SUBJECT]. Single centered object group,
+three-quarter view, strong readable silhouette, filling 80% of the canvas,
+soft colored glow behind it, isolated on a plain flat dark charcoal #19181D
+background. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes and bold silhouettes, clean dark plum
+outlines (#1D1424) of even medium weight, soft painterly shading with crisp
+edge highlights, warm golden key light from the top-left, cool blue rim light
+from the back-right, saturated but controlled festive palette, polished
+mobile-game finish, not photorealistic, no text. --ar 4:3
+<<<
+
+8.1 [SUBJECT] VALUES
+  card_ante.png      (Naughty List Ante)   : a small pile of glowing lumps of coal with orange embers, a curled Krampus horn and a short rusty chain beside it, a scroll corner with a black ribbon
+  card_sleigh.png    (Sleigh Run Spins)    : Santa's red #C2283A wooden sleigh with gold runners, piled high with wrapped presents, motion swoosh of sparkles behind it
+  card_midnight.png  (Midnight Run Spins)  : Santa's sleigh made of gold flying across a big glowing full moon, trailing a long golden sparkle trail, presents in the sleigh
+  card_stocking.png  (Stocking Spins)      : one crimson Christmas stocking with white fur cuff, bulging with gifts and a candy cane
+  card_golden.png    (Golden Stocking Spins): two shimmering gold Christmas stockings side by side, overflowing with gold coins and gifts, golden light rays
+  card_mystery.png   (Mystery Present)     : one large mysterious present in dark violet wrapping with a black ribbon, glowing light leaking from under the lid, faint swirling question-mark-shaped sparkles, a piece of coal and a gold star floating on either side
+
+================================================================================
+9. INTRO CLIPS  (image keyframe first, then animate it with image-to-video:
+   Kling / Runway / Luma / Veo). Generate keyframes with the --cref and --sref
+   references. Length 4–6 s, 24–30 fps, 16:9 + 9:16. No text in video — the
+   title is overlaid in engine.
+================================================================================
+
+9.1 STOCKING SPINS INTRO
+KEYFRAME >>>
+Cinematic game intro frame: view looking down a brick chimney into Santa's
+warm toy workshop below, fire glow and floating embers rising, five crimson
+Christmas stockings with white fur cuffs falling through the air toward a
+wooden mantel with five gold hooks, magical sparkles. Stylized premium
+online-slot game art, hand-painted 2.5D illustration, chunky readable shapes,
+clean dark plum outlines (#1D1424), soft painterly shading with crisp edge
+highlights, warm golden key light, saturated festive palette, not
+photorealistic, no text. --ar 16:9
+<<<
+VIDEO >>>
+Camera pushes smoothly down the chimney into the workshop, embers drift up
+past the lens, five red stockings drop one after another and land on the gold
+hooks with a small bounce, fire flickers, sparkles burst, ends on a calm wide
+shot of the mantel. Smooth, playful, 5 seconds, no camera shake, keep the art
+style identical to the input image.
+<<<
+
+9.2 GOLDEN STOCKING SPINS INTRO
+KEYFRAME >>>
+Cinematic game intro frame: Santa (jolly round-faced Santa Claus, rosy cheeks,
+small round red nose, twinkling dark eyes, big fluffy snow-white beard and
+curled moustache, red velvet hat with white fur trim and white pom-pom
+flopping to his left, warm kind smile, crimson #C2283A coat with white fur
+collar and gold buckle) unrolling a long glowing parchment scroll in a gilded
+workshop, golden light spilling out of the scroll, gold dust swirling, five
+shimmering gold stockings on a mantel behind him. Stylized premium
+online-slot game art, hand-painted 2.5D illustration, chunky readable shapes,
+clean dark plum outlines (#1D1424), soft painterly shading with crisp edge
+highlights, warm golden key light from the top-left, not photorealistic, no
+writing on the scroll. --ar 16:9
+<<<
+VIDEO >>>
+Santa smiles and flicks the scroll open, it unrolls toward the camera and
+golden light floods the screen, gold dust spirals, the five gold stockings
+behind him swell slightly and glow. Warm, magical, 5 seconds, smooth motion,
+keep the character and style identical to the input image.
+<<<
+
+9.3 KRAMPUSNACHT INTRO
+KEYFRAME >>>
+Cinematic game intro frame: a frozen old-town square at night, all the
+lights have gone out, total darkness except two glowing amber-yellow eyes
+#FFD34D and the faint outline of large curled ram-like horns, icy frost
+cracks spreading across the frame from the center, snow swirling, rusty
+chains hanging in the foreground, cold blue moonlight rim. Stylized premium
+online-slot game art, hand-painted 2.5D illustration, chunky readable shapes,
+clean dark plum outlines (#1D1424), soft painterly shading, cool blue rim
+light, spooky-fun mood not terrifying, not photorealistic, no text. --ar 16:9
+<<<
+VIDEO >>>
+The town's window lights switch off one by one, the screen goes dark, two
+amber eyes slowly open, a mischievous Krampus grin appears beneath them,
+frost cracks race outward across the screen, chains rattle and swing, a
+lightning flash briefly reveals the giant horned silhouette, then the blizzard
+sweeps in. 6 seconds, suspenseful but playful, keep the style identical to the
+input image, no gore.
+<<<
+
+9.4 MYSTERY PRESENT — SHAKE (shared opening, all three outcomes)
+KEYFRAME >>>
+Cinematic game intro frame: one giant Christmas present in dark violet
+wrapping with a black satin ribbon sitting alone in the center of a dark
+stage spotlight, faint light leaking from the seams of the lid, snow particles
+floating. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes, clean dark plum outlines (#1D1424), soft
+painterly shading with crisp edge highlights, not photorealistic, no text.
+--ar 16:9
+<<<
+VIDEO >>>
+The giant present shakes three times, harder each time, light leaking
+brighter from the seams, the ribbon strains and snaps on the third shake.
+3 seconds, ends exactly as the lid starts to lift. Keep style identical.
+<<<
+
+9.5 MYSTERY — COAL OUTCOME
+VIDEO (from 9.4 last frame) >>>
+The lid pops off and a puff of black soot bursts out, a single lump of coal
+with orange embers drops onto the floor with a thud, Krampus's arm (dark
+violet-brown shaggy fur, rusty chain on the wrist) reaches in from the side
+and waggles a finger teasingly, soot settles. 2.5 seconds, comedic timing,
+keep style identical.
+<<<
+
+9.6 MYSTERY — GOLDEN STOCKING OUTCOME
+VIDEO (from 9.4 last frame) >>>
+The lid lifts slowly and warm golden light pours out, Santa's white-gloved
+hand lifts the lid fully, gold stars and sparkles burst upward, two gold
+stockings float out of the box. 3 seconds, joyful, keep style identical.
+<<<
+
+9.7 MYSTERY — KRAMPUSNACHT OUTCOME
+VIDEO (from 9.4 last frame) >>>
+The lid explodes upward, rusty chains whip out of the box in every
+direction, violet light blasts out, the whole screen freezes over with frost,
+two amber eyes glow inside the box. 3 seconds, dramatic, spooky-fun, keep
+style identical.
+<<<
+
+9.8 SLEIGH RUN (1.5 s fly-by, plays often — keep short)
+KEYFRAME >>>
+Game effect frame: Santa's red wooden sleigh with gold runners pulled by
+three brown reindeer (front one with a glowing red nose) flying left to right
+across a dusk sky above snowy rooftops, a trail of falling wrapped presents
+and sparkles below the sleigh. Stylized premium online-slot game art,
+hand-painted 2.5D illustration, chunky readable shapes, clean dark plum
+outlines (#1D1424), warm golden key light, not photorealistic, no text.
+--ar 16:9
+<<<
+VIDEO >>>
+The sleigh streaks fast from the left edge to the right edge of the frame,
+reindeer legs galloping, presents tumbling from the sleigh down toward the
+bottom of the frame, sparkle trail fades. 1.5 seconds, loopable entry/exit
+off-screen, keep style identical.
+<<<
+MIDNIGHT RUN variant: same prompts, replace "red wooden sleigh" with "golden
+sleigh", "dusk sky" with "midnight sky in front of a huge glowing full moon",
+and "presents" with "golden presents".
+
+================================================================================
+10. WIN BANNER PLATES  (empty plates; words added in engine with Lilita One)
+================================================================================
+
+10.0 BANNER TEMPLATE — replace [TIER]
+>>>
+Empty celebration banner plate for a slot game big-win screen: a wide
+ribbon banner with a smooth empty center for text, [TIER]. Centered,
+symmetrical, isolated on a plain flat mid-grey #808080 background. Stylized
+premium online-slot game art, hand-painted 2.5D illustration, chunky readable
+shapes, clean dark plum outlines (#1D1424), soft painterly shading with crisp
+edge highlights, warm golden key light from the top-left, not photorealistic,
+no text. --ar 3:1
+<<<
+
+10.1 [TIER] VALUES
+  winbanner_jolly.png      (10×+)    : crimson ribbon with gold edges, two small holly sprigs at the ends
+  winbanner_merry.png      (25×+)    : crimson and gold ribbon, candy canes crossed behind each end, a few gold sparkles
+  winbanner_festive.png    (50×+)    : gold ribbon with crimson trim, a garland of baubles draped across, a gold star at the top
+  winbanner_legendary.png  (100×+)   : ornate gold shield banner with ruby gems, Santa's hat on the top left, reindeer antlers on the top right, golden light rays behind
+  winbanner_krampus.png    (1,000×+) : dark violet and gold banner wrapped in rusty chains, curled Krampus horns rising from both top corners, glowing amber gem in the center top, violet lightning sparks
+  winbanner_maxwin.png     (10,000×) : huge split banner, left half warm gold and crimson with Santa's hat, right half violet and frost with Krampus horns, both joined by a gold ribbon and a chain, exploding gold coins and stars behind
+
+================================================================================
+11. VFX SPRITES  (single elements on flat grey or pure black for additive use)
+================================================================================
+
+11.1 SPRITE TEMPLATE — replace [EFFECT]
+>>>
+Game VFX sprite sheet: [EFFECT], several variations arranged in a neat grid
+with generous spacing, each element separate and not touching, isolated on a
+pure black #000000 background. Stylized hand-painted game effect, clean
+shapes, soft glow, consistent with stylized premium online-slot game art, not
+photorealistic, no text. --ar 1:1
+<<<
+
+11.2 [EFFECT] VALUES
+  vfx_snowflakes.png     : 12 soft white snowflakes and snow puffs of different sizes, simple six-point shapes
+  vfx_sparkles.png       : 12 golden four-point sparkle stars and glints, warm gold #FFE08A
+  vfx_burst_nice.png     : 6 golden light burst / star explosion shapes, radial rays, warm gold
+  vfx_burst_naughty.png  : 6 violet #9B5CFF smoky burst shapes with soot specks
+  vfx_chain.png          : 6 straight and curved rusty iron chain segments, 3 to 8 links each
+  vfx_frost.png          : 6 icy frost crack patterns spreading from a center point, pale ice blue #BFE0FF
+  vfx_smoke.png          : 8 soft grey-lavender chimney smoke puffs, round cartoon shapes
+  vfx_coal.png           : 6 lumps of coal with glowing orange ember cracks
+  vfx_coins.png          : 8 shiny gold coins at different rotation angles, embossed with a tiny snowflake
+
+================================================================================
+12. STORE / LOADING
+================================================================================
+
+12.1 GAME TILE / THUMBNAIL   (game_tile.png — check Stake's current tile size;
+     generate 1:1 and 4:5 and crop)
+>>>
+Slot game cover art, key visual: a jolly round-faced Santa Claus (rosy
+cheeks, small round red nose, twinkling dark eyes, big fluffy snow-white beard
+and curled moustache, red velvet hat with white fur trim and white pom-pom
+flopping to his left, crimson coat with white fur collar and gold buckle) on
+the left, laughing and holding up a glowing crimson gift with a gold ribbon,
+back to back with a mischievous Krampus (dark violet-brown shaggy fur, large
+curled bone-colored ram horns, glowing amber eyes, toothy grin, rusty chain)
+on the right, swinging a chain and holding a violet gift with a black ribbon.
+Left half warm gold light, right half cold violet light, snowy rooftops and a
+big moon behind them, gold sparkles and snow, empty space at the top third
+for the logo. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes and bold silhouettes, clean dark plum
+outlines (#1D1424), soft painterly shading with crisp edge highlights, warm
+golden key light from the top-left, cool blue rim light from the back-right,
+saturated festive palette, polished finish, not photorealistic, no text.
+--ar 1:1
+<<<
+
+12.2 LOADING SCREEN   (loading_screen.png, 16:9 and 9:16)
+>>>
+Slot game loading screen illustration: the snowy rooftop village at dusk
+(deep navy to warm peach sky, glowing yellow windows, chimney smoke, big pale
+moon), Santa's sleigh as a small silhouette crossing the moon, a single
+crimson gift with a gold ribbon resting in the snow in the lower center,
+empty area in the upper center for the logo and an empty area at the bottom
+for a loading bar. Stylized premium online-slot game art, hand-painted 2.5D
+illustration, chunky readable shapes, clean dark plum outlines (#1D1424), soft
+painterly shading, warm golden key light from the top-left, not
+photorealistic, no text. --ar 16:9
+<<<
+
+================================================================================
+13. AUDIO PROMPTS  (Suno / Udio / ElevenLabs Music & SFX — use a paid,
+    commercial-license tier; no real carols' melodies or lyrics)
+================================================================================
+
+13.1 MUSIC (all instrumental, loopable, same key family — C major / A minor)
+  music_base.mp3 >>>
+  Instrumental loop, cozy whimsical Christmas adventure, sleigh bells,
+  celesta, pizzicato strings, warm French horn, light orchestral percussion,
+  playful bassoon counter-melody, 100 BPM, C major, original melody (no
+  existing carols), seamless 90-second loop, no vocals.
+  <<<
+  music_ante.mp3 >>>
+  Same instrumentation and tempo as a cozy whimsical Christmas loop, but
+  mischievous: low brass stabs, muted tuba, rattling chain percussion,
+  sneaky clarinet, minor-key turns, 100 BPM, A minor, seamless 90-second loop,
+  no vocals.
+  <<<
+  music_bonus.mp3 >>>
+  Upbeat festive orchestral, sleigh bells, glockenspiel, strings ostinato,
+  warm fireplace feeling, excited and rising, 120 BPM, C major, original
+  melody, seamless 60-second loop, no vocals.
+  <<<
+  music_super.mp3 >>>
+  Triumphant golden Christmas orchestral, full brass, choir "ahh" pads,
+  harp glissandos, celesta sparkles, 120 BPM, D major, original melody,
+  seamless 60-second loop, no vocals.
+  <<<
+  music_hidden.mp3 >>>
+  Dark playful winter-villain orchestral, taiko drums, low choir chant
+  (no words), rattling chains, howling wind, harpsichord, tense but fun,
+  110 BPM, A minor, seamless 60-second loop, no vocals.
+  <<<
+
+13.2 SFX (short, dry, game-ready; export 48 kHz WAV)
+  sfx_reel_stop      : soft wooden thunk with a tiny bell tick, 0.2 s
+  sfx_bell_land      : single bright brass sleigh bell ring, 0.8 s
+  sfx_anticipation   : rising shimmer of sleigh bells and strings, 1.5 s
+  sfx_gift_shake     : cardboard box rattling with paper rustle, 0.4 s
+  sfx_reveal_nice    : ribbon pull + magical golden chime burst, 0.6 s
+  sfx_reveal_naughty : ribbon snap + low cartoon growl + chain rattle, 0.7 s
+  sfx_chain_lash     : metal chain whip and clank, 0.4 s
+  sfx_stocking_fill  : soft coin-and-gift plop into fabric, 0.3 s
+  sfx_krampus_stuff  : sneaky low chuckle + soft plop, 0.6 s
+  sfx_sleigh_flyby   : fast whoosh with jingling bells and a "ho ho" free of words, 1.5 s
+  sfx_line_win       : bright bell arpeggio up, 0.6 s
+  sfx_bigwin_loop    : celebratory bells, coins and brass fanfare loop, 4 s
+  sfx_coal           : soot puff + dull thud + short mischievous laugh, 1.2 s
+  sfx_ui_click       : small soft wooden click, 0.05 s
+
+================================================================================
+CONSISTENCY CHECKLIST (before accepting any asset)
+--------------------------------------------------------------------------------
+[ ] Outline is dark plum #1D1424, same weight as the H1 Santa symbol
+[ ] Key light top-left, rim light back-right
+[ ] Colors are inside the master palette (section 0.2)
+[ ] Santa / Krampus match their character sheets (face, hat, horns, eyes)
+[ ] No text, letters or numbers baked into the image
+[ ] Symbol readable at 64 px and in greyscale; premiums clearly brighter
+    and bigger-looking than lows
+[ ] Background centers are calm enough for the reels
+[ ] Hands, eyes and symmetry fixed in the paint-over
+[ ] Saved with the filename from the asset list
+================================================================================
